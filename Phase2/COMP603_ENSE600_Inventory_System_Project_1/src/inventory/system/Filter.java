@@ -7,7 +7,7 @@ user inputs matches the prompts provided by the CLI. the class contains:
 1. a Integer Input Check
 2. a double/float input Check
 3. a security info check for authorised user
-this is test update
+this is test update 2
 */
 public class Filter {
     /*
