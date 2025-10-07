@@ -1,0 +1,6 @@
+Order Request Report - Generated on: Tue Sep 30 13:11:49 NZDT 2025
+
+Item Code  | Item Name  | Order Qty |  Price  | Total Price 
+-----------------------------------------------------------
+AB0002     | S21        |         5 | 1100.99 |     5504.95
+AB0001     | S20        |        10 | 1000.99 |    10009.90
