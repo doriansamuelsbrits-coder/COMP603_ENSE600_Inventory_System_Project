@@ -14,6 +14,14 @@ public class InventorySystem {
     private static final String ITEM_CODE_PREFIX = "AB";
     private static Map<String, Item> inventory = new HashMap<>();
 
+    public static String getInventoryFile(){return INVENTORY_FILE;}
+    
+    public static String getOrderRequestFile(){return GENERATED_ORDER_FILE;}
+    
+    public static Map<String,Item> getHashMap(){return inventory;}
+    
+    public static String getPrefix(){return ITEM_CODE_PREFIX;}
+    
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
