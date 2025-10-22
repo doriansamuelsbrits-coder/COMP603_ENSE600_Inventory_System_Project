@@ -3,8 +3,6 @@ package inventory.system;
 /*
 This class focuses on aiding the Hashmap for printing to the txt file.
 */
-
-
 public class Item {
     String itemCode;
     String itemName;
@@ -12,7 +10,7 @@ public class Item {
     int moq;
     int stkMin;
     double price;
-
+    
     public Item(String itemCode, String itemName, int qty, int moq, int stkMin, double price) {
         this.itemCode = itemCode;
         this.itemName = itemName;

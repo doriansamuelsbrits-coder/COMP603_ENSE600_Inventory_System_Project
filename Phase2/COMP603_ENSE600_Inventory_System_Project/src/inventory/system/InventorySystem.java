@@ -13,6 +13,7 @@ public class InventorySystem {
     private static final String GENERATED_ORDER_FILE = "./resources/order_request.txt";
     private static final String ITEM_CODE_PREFIX = "AB";
     private static Map<String, Item> inventory = new HashMap<>();
+    private static Map<String, Security> security = new HashMap<>();
 
     public static String getInventoryFile(){return INVENTORY_FILE;}
     
