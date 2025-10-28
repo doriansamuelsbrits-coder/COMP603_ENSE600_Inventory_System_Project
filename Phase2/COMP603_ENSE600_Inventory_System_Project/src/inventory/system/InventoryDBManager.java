@@ -1,12 +1,11 @@
 package inventory.system;
+
 import java.sql.Connection;     //database connection service
 import java.sql.DriverManager;  //Existing table removal
 import java.sql.Statement;      //Statement Generation for tables
 import java.sql.PreparedStatement;
 import java.sql.SQLException;   //Exceptions
 import java.util.Map;           //For inventory handling
-
-
 
 //Inventory Database URL: jdbc:derby://localhost:1527/InventoryDB
 //Database Username: COMP603
@@ -21,108 +20,165 @@ public class InventoryDBManager {
     private Connection getConnection() throws SQLException {
         return DriverManager.getConnection(url, username, password);
     }
-    
-    public void InsertIntoInventoryTable(Map<String, Item> inventory) {
+
+    private boolean tableExists(String tableName) throws SQLException {
+        conn = getConnection();
+        var md = conn.getMetaData();
+        try (var rs = md.getTables(null, null, tableName.toUpperCase(), null)) {
+            return rs.next();
+        }
+    }
+
+    public boolean usernameExists(String username) {
+        try {
+            conn = getConnection();
+            String query = "SELECT 1 FROM Security WHERE USERNAME = ?";
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.setString(1, username);
+            var rs = ps.executeQuery();
+            return rs.next(); // true if a row exists
+        } catch (SQLException ex) {
+            System.err.println("SQLException: " + ex.getMessage());
+            return false;
+        }
+    }
+
+    /*
+    This Database Method establishes an update to a preexisting Database table Called INVENTORY,
+    if an item does not exist make a new item
+    */
+    public void UpdateInventoryTable(Map<String, Item> inventory) {
         String createTable = "CREATE TABLE Inventory (ID INT, "
-                    + "CODE VARCHAR(50), "
-                    + "NAME VARCHAR(50), "
-                    + "QTY INT, MOQ INT, "
-                    + "STK_MIN INT, "
-                    + "PRICE DOUBLE)";
-        
-        try{ conn = getConnection();
+                + "CODE VARCHAR(50), "
+                + "NAME VARCHAR(50), "
+                + "QTY INT, MOQ INT, "
+                + "STK_MIN INT, "
+                + "PRICE DOUBLE)";
+
+        try {
+            conn = getConnection();
             Statement statement = conn.createStatement();
-           
-            statement.executeUpdate("DROP TABLE IF EXISTS Inventory");
-            System.out.println("Table Inventory Has Been Dropped");
-            
-            statement.executeUpdate(createTable);
-            
+
+            if (!tableExists("Inventory")) {
+                System.out.println("Table Inventory does not exist");
+                statement.executeUpdate(createTable);
+                System.out.println("Table Inventory has been Created");
+            }
+
             String insertIntoSQL = "INSERT INTO Inventory "
                     + "(CODE, NAME, QTY, MOQ, STK_MIN, PRICE)"
                     + " VALUES (?,?,?,?,?,?)";
-            PreparedStatement ps = conn.prepareStatement(insertIntoSQL);
-            for(Item item: inventory.values())
-            {
-                ps.setString(1, item.itemCode);
-                ps.setString(2, item.itemName);
-                ps.setInt(3, item.qty);
-                ps.setInt(4, item.moq);
-                ps.setInt(5, item.stkMin);
-                ps.setDouble(6, item.price);
-                ps.executeUpdate();
+            String updateSQL = "UPDATE Inventory SET "
+                    + "NAME=?, QTY=?, MOQ=?, STK_MIN=?, PRICE=? WHERE CODE=?";
+
+            PreparedStatement insertPS = conn.prepareStatement(insertIntoSQL);
+            PreparedStatement updatePS = conn.prepareStatement(updateSQL);
+
+            for (Item item : inventory.values()) {
+                updatePS.setString(1, item.itemName);
+                updatePS.setInt(2, item.qty);
+                updatePS.setInt(3, item.moq);
+                updatePS.setInt(4, item.stkMin);
+                updatePS.setDouble(5, item.price);
+                updatePS.setString(6, item.itemCode); //ITEMCODE must go last because of string requirements
+                int updatedRows = updatePS.executeUpdate();
+
+                // If no rows were updated, insert the item
+                if (updatedRows == 0) {
+                    insertPS.setString(1, item.itemCode);
+                    insertPS.setString(2, item.itemName);
+                    insertPS.setInt(3, item.qty);
+                    insertPS.setInt(4, item.moq);
+                    insertPS.setInt(5, item.stkMin);
+                    insertPS.setDouble(6, item.price);
+                    insertPS.executeUpdate();
+                }
             }
-            
-        }
-        catch(SQLException ex){
+
+        } catch (SQLException ex) {
             System.err.println("SQLException: " + ex.getMessage());
-        } 
+        }
     }
 
-    public void InsertIntoOrderRequestTable() {
-        try{conn = getConnection();
+    /*
+    This Database Method will display and currently updated orderrequest table which
+    will update the database table by removing any item that doesnt meet the requirements for new orders
+    */
+    public void InsertIntoOrderRequestTable(Map<String, Item> inventory) {
+        try {
+            conn = getConnection();
             Statement statement = conn.createStatement();
             String table = "OrderRequest";
-            
-            statement.executeUpdate("DROP TABLE IF EXISTS"+table);
-            System.out.println("Tabel"+ table+ "Has Been Dropped");
-            
-            String createTable = "CREATE TABLE "+table+"(ID INT, "
+
+            if (tableExists(table)) {
+                statement.executeUpdate("DROP TABLE " + table);
+                System.out.println("Table " + table + " Has Been Dropped");
+            } else {
+                System.out.println("Table " + table + "does not exist.");
+            }
+
+            String createTable = "CREATE TABLE " + table + "(ID INT, "
                     + "CODE VARCHAR(50), "
                     + "NAME VARCHAR(50), "
                     + "QTY INT, MOQ INT, "
                     + "STK_MIN INT, "
                     + "PRICE FLOAT)";
             statement.executeUpdate(createTable);
-        }
-        catch(SQLException ex){
-            System.err.println("SQLException: " + ex.getMessage());
-        } 
-    }
 
-    private boolean tableExists(String tableName) throws SQLException {
-    conn = getConnection();
-    var md = conn.getMetaData();
-    try (var rs = md.getTables(null, null, tableName, null)) {
-        return rs.next();
+        } catch (SQLException ex) {
+            System.err.println("SQLException: " + ex.getMessage());
+        }
     }
-}
-    
-    public void InsertIntoSecurityTable(Map<String, Security> security) {
+    /*
+    This method will establish a security table for usernames and passwords for 
+    users who want to use the GUI application which is first run through a registration
+    it will also check if there a currently registered user in the database.
+    */
+    public void UpdateSecurityTable(Map<String, Security> security) {
         String createTable = "CREATE TABLE Security (ID INT, "
-                    + "USERNAME VARCHAR(50),"
-                    + "NAME VARCHAR(50),"
-                    + "PASSWORD VARCHAR(50), "
-                    + "STATUS VARCHAR(50)) ";
-        try{
+                + "USERNAME VARCHAR(50),"
+                + "NAME VARCHAR(50),"
+                + "PASSWORD VARCHAR(50), "
+                + "STATUS VARCHAR(50)) ";
+        try {
             conn = getConnection();
             Statement statement = conn.createStatement();
-            
-            if(tableExists("Security"))
-            {
-                statement.executeUpdate("DROP TABLE Security");
-                System.out.println("Table Security has been dropped");
+
+            if (!tableExists("Security")) {
+                System.out.println("Table Security does not exist");
+                statement.executeUpdate(createTable);
+                System.out.println("Table Security has been created");
             }
-            System.out.println("Table Security does not exist");
-            
-            statement.executeUpdate(createTable);
+
             String insertIntoSQL = "INSERT INTO Security "
                     + "(USERNAME, NAME, PASSWORD, STATUS)"
                     + " VALUES (?,?,?,?)";
-            PreparedStatement ps = conn.prepareStatement(insertIntoSQL);
+            String updateSQL = "UPDATE Security SET "
+                    + "NAME=?, PASSWORD=?, STATUS=? WHERE USERNAME=?";
+
+            PreparedStatement iSQL = conn.prepareStatement(insertIntoSQL);
+            PreparedStatement uSQL = conn.prepareStatement(updateSQL);
             //sources the Username and passwords stored in the security
-            for(Security sec: security.values())
-            {
-                ps.setString(1, sec.getUserName());
-                ps.setString(2, sec.getEmployeeName());
-                ps.setString(3, sec.getPassword());
-                ps.setString(4, sec.getPosition());
-                ps.executeUpdate();
+            for (Security sec : security.values()) {
+
+                uSQL.setString(4, sec.getUserName());       //gets employees username
+                uSQL.setString(1, sec.getEmployeeName());   //gets employees name
+                uSQL.setString(2, sec.getPassword());       //gets employees password
+                uSQL.setString(3, sec.getPosition());       //gets employee position in the company
+
+                int updatedRows = uSQL.executeUpdate();
+
+                if (updatedRows == 0) {
+                    iSQL.setString(1, sec.getUserName());
+                    iSQL.setString(2, sec.getEmployeeName());
+                    iSQL.setString(3, sec.getPassword());
+                    iSQL.setString(4, sec.getPosition());
+                    iSQL.executeUpdate();
+                }
             }
-        }
-        catch(SQLException ex){
+        } catch (SQLException ex) {
             System.err.println("SQLException: " + ex.getMessage());
-        } 
-        
+        }
+
     }
 }

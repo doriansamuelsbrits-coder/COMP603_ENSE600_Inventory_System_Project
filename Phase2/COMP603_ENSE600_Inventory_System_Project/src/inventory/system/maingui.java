@@ -1408,7 +1408,7 @@ public class maingui extends javax.swing.JFrame {
             }
             userMap.put(uid, new Security(name, uid, password));
             InventoryDBManager i = new InventoryDBManager();
-            i.InsertIntoSecurityTable(userMap);
+            i.UpdateSecurityTable(userMap);
 
             RegisterNameTextField.setText("");
             RegisterUIDTextField.setText("");
@@ -1536,9 +1536,8 @@ public class maingui extends javax.swing.JFrame {
         Parent.repaint();
         Parent.revalidate();
     }//GEN-LAST:event_removeitemremoveoptionspagebuttonActionPerformed
-
+    //Create new Item Page, and Item is saved to database when added
     private void CreateNewItemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateNewItemButtonActionPerformed
-        
         String code = ITEMCODETextField.getText();
         String name = ITEMNAMETextField.getText();
         String supplier = SUPPLIERTextField.getText();
@@ -1549,16 +1548,11 @@ public class maingui extends javax.swing.JFrame {
         //Item(String itemCode, String itemName, int qty, int moq, int stkMin, double price)
         inventoryMap.put(code, new Item(code,name,1, moq, min, price));
         InventoryDBManager i = new InventoryDBManager();
-        i.InsertIntoInventoryTable(inventoryMap);
+        i.UpdateInventoryTable(inventoryMap);
         
         JOptionPane.showMessageDialog(this, "Item Registered Successfully!");
-        
-        
     }//GEN-LAST:event_CreateNewItemButtonActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
