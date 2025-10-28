@@ -1,14 +1,17 @@
-package inventory.system;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 
-import java.util.HashMap;
-import java.util.Map;
-import javax.swing.JOptionPane;
-
+/**
+ *
+ * @author kanth
+ */
 public class maingui extends javax.swing.JFrame {
 
-    private Map<String, Security> userMap = InventorySystem.getSecurityMap();
-    private Map<String, Item> inventoryMap = InventorySystem.getHashMap();
-
+    /**
+     * Creates new form maingui
+     */
     public maingui() {
         initComponents();
     }
@@ -62,38 +65,41 @@ public class maingui extends javax.swing.JFrame {
         loginloginpagebutton = new javax.swing.JToggleButton();
         jLabel7 = new javax.swing.JLabel();
         registrationpage = new javax.swing.JPanel();
-        RegisterNameTextField = new javax.swing.JTextField();
-        RegisterUIDTextField = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        RegisterPasswordField = new javax.swing.JPasswordField();
+        jPasswordField2 = new javax.swing.JPasswordField();
         jLabel11 = new javax.swing.JLabel();
-        RegisterPasswordConfirmField = new javax.swing.JPasswordField();
-        RegisterSaveButton = new javax.swing.JToggleButton();
+        jPasswordField3 = new javax.swing.JPasswordField();
+        registerregistrationpagebutton = new javax.swing.JToggleButton();
         homepage = new javax.swing.JPanel();
         removeitemhomepagebutton = new javax.swing.JToggleButton();
         inventorystatushomepagebutton = new javax.swing.JToggleButton();
         additemhomepagebutton = new javax.swing.JToggleButton();
         orderrequesthomepagebutton = new javax.swing.JToggleButton();
+        jLabel27 = new javax.swing.JLabel();
         addoptionspage = new javax.swing.JPanel();
         addqtyaddoptionspage = new javax.swing.JToggleButton();
         additemaddoptionspage = new javax.swing.JToggleButton();
+        jLabel28 = new javax.swing.JLabel();
         addqtypage = new javax.swing.JPanel();
         list1 = new java.awt.List();
-        jTextField4 = new javax.swing.JTextField();
         jSpinner1 = new javax.swing.JSpinner();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jToggleButton1 = new javax.swing.JToggleButton();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        jLabel33 = new javax.swing.JLabel();
         additempage = new javax.swing.JPanel();
-        ITEMCODETextField = new javax.swing.JTextField();
-        ITEMNAMETextField = new javax.swing.JTextField();
-        SUPPLIERTextField = new javax.swing.JTextField();
-        MOQSpinner = new javax.swing.JSpinner();
-        PRICETextField = new javax.swing.JTextField();
-        MINIMUMSpinner = new javax.swing.JSpinner();
-        CreateNewItemButton = new javax.swing.JToggleButton();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        jSpinner2 = new javax.swing.JSpinner();
+        jTextField8 = new javax.swing.JTextField();
+        jSpinner3 = new javax.swing.JSpinner();
+        jToggleButton2 = new javax.swing.JToggleButton();
         jToggleButton3 = new javax.swing.JToggleButton();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -101,21 +107,25 @@ public class maingui extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
         removeoptionspage = new javax.swing.JPanel();
         removeqtyremoveoptionspagebutton = new javax.swing.JToggleButton();
         removeitemremoveoptionspagebutton = new javax.swing.JToggleButton();
+        jLabel29 = new javax.swing.JLabel();
         removeqtypage = new javax.swing.JPanel();
         jSpinner4 = new javax.swing.JSpinner();
         list3 = new java.awt.List();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
         jToggleButton4 = new javax.swing.JToggleButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel35 = new javax.swing.JLabel();
         removeitempage = new javax.swing.JPanel();
         list4 = new java.awt.List();
         jLabel22 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
         jToggleButton5 = new javax.swing.JToggleButton();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jLabel32 = new javax.swing.JLabel();
         inventorypage = new javax.swing.JPanel();
         list5 = new java.awt.List();
         jToggleButton6 = new javax.swing.JToggleButton();
@@ -128,9 +138,11 @@ public class maingui extends javax.swing.JFrame {
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
         orderpage = new javax.swing.JPanel();
         list6 = new java.awt.List();
         jToggleButton7 = new javax.swing.JToggleButton();
+        jLabel31 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(640, 480));
@@ -182,6 +194,9 @@ public class maingui extends javax.swing.JFrame {
 
         sidepanel.add(Loginsidepanel, "card2");
 
+        Registrationsidepanel.setBackground(new java.awt.Color(102, 255, 255));
+
+        loginsidepanelbutton1.setBackground(new java.awt.Color(102, 255, 102));
         loginsidepanelbutton1.setText("Login");
         loginsidepanelbutton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -198,7 +213,7 @@ public class maingui extends javax.swing.JFrame {
         RegistrationsidepanelLayout.setHorizontalGroup(
             RegistrationsidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistrationsidepanelLayout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
+                .addContainerGap(25, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18))
             .addGroup(RegistrationsidepanelLayout.createSequentialGroup()
@@ -228,6 +243,10 @@ public class maingui extends javax.swing.JFrame {
 
         sidepanel.add(Registrationsidepanel, "card3");
 
+        Homesidepanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        Logouthomesidepanelbutton.setBackground(new java.awt.Color(255, 51, 51));
+        Logouthomesidepanelbutton.setForeground(new java.awt.Color(255, 255, 255));
         Logouthomesidepanelbutton.setText("LOG OUT");
         Logouthomesidepanelbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -263,6 +282,8 @@ public class maingui extends javax.swing.JFrame {
 
         sidepanel.add(Homesidepanel, "card4");
 
+        Logoutoptionssidepanelbutton.setBackground(new java.awt.Color(255, 51, 51));
+        Logoutoptionssidepanelbutton.setForeground(new java.awt.Color(255, 255, 255));
         Logoutoptionssidepanelbutton.setText("LOG OUT");
         Logoutoptionssidepanelbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -370,6 +391,8 @@ public class maingui extends javax.swing.JFrame {
             }
         });
 
+        Logoutinventorysidepanelbutton1.setBackground(new java.awt.Color(255, 51, 51));
+        Logoutinventorysidepanelbutton1.setForeground(new java.awt.Color(255, 255, 255));
         Logoutinventorysidepanelbutton1.setText("LOG OUT");
         Logoutinventorysidepanelbutton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -431,6 +454,8 @@ public class maingui extends javax.swing.JFrame {
             }
         });
 
+        Logoutordersidepanelbutton.setBackground(new java.awt.Color(255, 51, 51));
+        Logoutordersidepanelbutton.setForeground(new java.awt.Color(255, 255, 255));
         Logoutordersidepanelbutton.setText("LOG OUT");
         Logoutordersidepanelbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -511,6 +536,7 @@ public class maingui extends javax.swing.JFrame {
 
         jPasswordField1.setText("jPasswordField1");
 
+        loginloginpagebutton.setBackground(new java.awt.Color(102, 255, 102));
         loginloginpagebutton.setText("Login");
         loginloginpagebutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -560,10 +586,9 @@ public class maingui extends javax.swing.JFrame {
 
         Parent.add(Loginpage, "card2");
 
-        RegisterNameTextField.setText("name");
-        RegisterNameTextField.setName("RegisterNameTextField"); // NOI18N
+        jTextField2.setText("jTextField2");
 
-        RegisterUIDTextField.setText("user id");
+        jTextField3.setText("jTextField3");
 
         jLabel8.setText("NAME");
 
@@ -571,12 +596,16 @@ public class maingui extends javax.swing.JFrame {
 
         jLabel10.setText("PASSWORD");
 
+        jPasswordField2.setText("jPasswordField2");
+
         jLabel11.setText("RE-TYPE PASSWORD");
 
-        RegisterSaveButton.setText("Register");
-        RegisterSaveButton.addActionListener(new java.awt.event.ActionListener() {
+        jPasswordField3.setText("jPasswordField3");
+
+        registerregistrationpagebutton.setText("Register");
+        registerregistrationpagebutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegisterSaveButtonActionPerformed(evt);
+                registerregistrationpagebuttonActionPerformed(evt);
             }
         });
 
@@ -595,21 +624,21 @@ public class maingui extends javax.swing.JFrame {
             .addGroup(registrationpageLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(registrationpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(RegisterNameTextField)
-                    .addComponent(RegisterUIDTextField)
-                    .addComponent(RegisterPasswordField, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
-                    .addComponent(RegisterPasswordConfirmField))
+                    .addComponent(jTextField2)
+                    .addComponent(jTextField3)
+                    .addComponent(jPasswordField2, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
+                    .addComponent(jPasswordField3))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registrationpageLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(RegisterSaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(registerregistrationpagebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(178, 178, 178))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registrationpageLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel10)
                 .addGap(205, 205, 205))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registrationpageLayout.createSequentialGroup()
-                .addContainerGap(186, Short.MAX_VALUE)
+                .addContainerGap(187, Short.MAX_VALUE)
                 .addComponent(jLabel11)
                 .addGap(183, 183, 183))
         );
@@ -619,25 +648,27 @@ public class maingui extends javax.swing.JFrame {
                 .addGap(59, 59, 59)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(RegisterNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(RegisterUIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(RegisterPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(RegisterPasswordConfirmField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
-                .addComponent(RegisterSaveButton)
+                .addComponent(registerregistrationpagebutton)
                 .addContainerGap(56, Short.MAX_VALUE))
         );
 
         Parent.add(registrationpage, "card3");
+
+        homepage.setLayout(null);
 
         removeitemhomepagebutton.setText("REMOVE ITEM");
         removeitemhomepagebutton.addActionListener(new java.awt.event.ActionListener() {
@@ -645,6 +676,8 @@ public class maingui extends javax.swing.JFrame {
                 removeitemhomepagebuttonActionPerformed(evt);
             }
         });
+        homepage.add(removeitemhomepagebutton);
+        removeitemhomepagebutton.setBounds(258, 58, 177, 125);
 
         inventorystatushomepagebutton.setText("INVENTORY STATUS");
         inventorystatushomepagebutton.addActionListener(new java.awt.event.ActionListener() {
@@ -652,6 +685,8 @@ public class maingui extends javax.swing.JFrame {
                 inventorystatushomepagebuttonActionPerformed(evt);
             }
         });
+        homepage.add(inventorystatushomepagebutton);
+        inventorystatushomepagebutton.setBounds(53, 209, 177, 125);
 
         additemhomepagebutton.setText("ADD ITEM");
         additemhomepagebutton.addActionListener(new java.awt.event.ActionListener() {
@@ -659,6 +694,8 @@ public class maingui extends javax.swing.JFrame {
                 additemhomepagebuttonActionPerformed(evt);
             }
         });
+        homepage.add(additemhomepagebutton);
+        additemhomepagebutton.setBounds(53, 58, 177, 125);
 
         orderrequesthomepagebutton.setText("ORDER REQUEST");
         orderrequesthomepagebutton.addActionListener(new java.awt.event.ActionListener() {
@@ -666,39 +703,16 @@ public class maingui extends javax.swing.JFrame {
                 orderrequesthomepagebuttonActionPerformed(evt);
             }
         });
+        homepage.add(orderrequesthomepagebutton);
+        orderrequesthomepagebutton.setBounds(258, 209, 177, 125);
 
-        javax.swing.GroupLayout homepageLayout = new javax.swing.GroupLayout(homepage);
-        homepage.setLayout(homepageLayout);
-        homepageLayout.setHorizontalGroup(
-            homepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homepageLayout.createSequentialGroup()
-                .addContainerGap(53, Short.MAX_VALUE)
-                .addGroup(homepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(homepageLayout.createSequentialGroup()
-                        .addComponent(inventorystatushomepagebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(orderrequesthomepagebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(homepageLayout.createSequentialGroup()
-                        .addComponent(additemhomepagebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addComponent(removeitemhomepagebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(45, 45, 45))
-        );
-        homepageLayout.setVerticalGroup(
-            homepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(homepageLayout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addGroup(homepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(removeitemhomepagebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(additemhomepagebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(homepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(inventorystatushomepagebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(orderrequesthomepagebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(66, Short.MAX_VALUE))
-        );
+        jLabel27.setIcon(new javax.swing.ImageIcon("C:\\Users\\kanth\\Downloads\\Sublime Vivid.jpg")); // NOI18N
+        homepage.add(jLabel27);
+        jLabel27.setBounds(0, 0, 480, 400);
 
         Parent.add(homepage, "card4");
+
+        addoptionspage.setLayout(null);
 
         addqtyaddoptionspage.setText("ADD QUANTITY");
         addqtyaddoptionspage.addActionListener(new java.awt.event.ActionListener() {
@@ -706,6 +720,8 @@ public class maingui extends javax.swing.JFrame {
                 addqtyaddoptionspageActionPerformed(evt);
             }
         });
+        addoptionspage.add(addqtyaddoptionspage);
+        addqtyaddoptionspage.setBounds(60, 141, 170, 110);
 
         additemaddoptionspage.setText("ADD NEW ITEM");
         additemaddoptionspage.addActionListener(new java.awt.event.ActionListener() {
@@ -713,174 +729,120 @@ public class maingui extends javax.swing.JFrame {
                 additemaddoptionspageActionPerformed(evt);
             }
         });
+        addoptionspage.add(additemaddoptionspage);
+        additemaddoptionspage.setBounds(248, 141, 170, 110);
 
-        javax.swing.GroupLayout addoptionspageLayout = new javax.swing.GroupLayout(addoptionspage);
-        addoptionspage.setLayout(addoptionspageLayout);
-        addoptionspageLayout.setHorizontalGroup(
-            addoptionspageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(addoptionspageLayout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(addqtyaddoptionspage, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(additemaddoptionspage, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(62, Short.MAX_VALUE))
-        );
-        addoptionspageLayout.setVerticalGroup(
-            addoptionspageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(addoptionspageLayout.createSequentialGroup()
-                .addGap(141, 141, 141)
-                .addGroup(addoptionspageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(additemaddoptionspage, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
-                    .addComponent(addqtyaddoptionspage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(149, Short.MAX_VALUE))
-        );
+        jLabel28.setIcon(new javax.swing.ImageIcon("C:\\Users\\kanth\\Downloads\\Sublime Vivid.jpg")); // NOI18N
+        addoptionspage.add(jLabel28);
+        jLabel28.setBounds(0, 0, 480, 400);
 
         Parent.add(addoptionspage, "card5");
 
-        jTextField4.setText("jTextField4");
+        addqtypage.setLayout(null);
+        addqtypage.add(list1);
+        list1.setBounds(39, 50, 400, 239);
+        addqtypage.add(jSpinner1);
+        jSpinner1.setBounds(350, 310, 64, 22);
 
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("ITEM CODE");
+        addqtypage.add(jLabel12);
+        jLabel12.setBounds(40, 310, 62, 16);
 
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("QUANTITY");
+        addqtypage.add(jLabel13);
+        jLabel13.setBounds(270, 310, 80, 16);
 
         jToggleButton1.setText("ADD QUANTITY");
+        addqtypage.add(jToggleButton1);
+        jToggleButton1.setBounds(154, 350, 115, 23);
 
-        javax.swing.GroupLayout addqtypageLayout = new javax.swing.GroupLayout(addqtypage);
-        addqtypage.setLayout(addqtypageLayout);
-        addqtypageLayout.setHorizontalGroup(
-            addqtypageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(addqtypageLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel12)
-                .addGap(53, 53, 53)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
-                .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63))
-            .addGroup(addqtypageLayout.createSequentialGroup()
-                .addGroup(addqtypageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(addqtypageLayout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(list1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(addqtypageLayout.createSequentialGroup()
-                        .addGap(154, 154, 154)
-                        .addComponent(jToggleButton1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        addqtypageLayout.setVerticalGroup(
-            addqtypageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(addqtypageLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(list1, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
-                .addGroup(addqtypageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel13))
-                .addGap(18, 18, 18)
-                .addComponent(jToggleButton1)
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        addqtypage.add(jComboBox3);
+        jComboBox3.setBounds(120, 310, 88, 22);
+
+        jLabel33.setIcon(new javax.swing.ImageIcon("C:\\Users\\kanth\\Downloads\\Sublime Vivid.jpg")); // NOI18N
+        addqtypage.add(jLabel33);
+        jLabel33.setBounds(0, 0, 480, 400);
 
         Parent.add(addqtypage, "card6");
 
-        ITEMCODETextField.setName("ITEMCODETextField"); // NOI18N
+        additempage.setLayout(null);
 
-        CreateNewItemButton.setText("CREATE");
-        CreateNewItemButton.setName("CREATEBUTTON"); // NOI18N
-        CreateNewItemButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CreateNewItemButtonActionPerformed(evt);
-            }
-        });
+        jTextField5.setText("jTextField5");
+        additempage.add(jTextField5);
+        jTextField5.setBounds(302, 56, 108, 22);
+
+        jTextField6.setText("jTextField6");
+        additempage.add(jTextField6);
+        jTextField6.setBounds(302, 90, 108, 22);
+
+        jTextField7.setText("jTextField7");
+        additempage.add(jTextField7);
+        jTextField7.setBounds(302, 130, 108, 22);
+        additempage.add(jSpinner2);
+        jSpinner2.setBounds(346, 170, 64, 22);
+
+        jTextField8.setText("jTextField8");
+        additempage.add(jTextField8);
+        jTextField8.setBounds(302, 210, 108, 22);
+        additempage.add(jSpinner3);
+        jSpinner3.setBounds(346, 250, 64, 22);
+
+        jToggleButton2.setText("CREATE");
+        additempage.add(jToggleButton2);
+        jToggleButton2.setBounds(86, 341, 72, 23);
 
         jToggleButton3.setText("REFRESH");
+        additempage.add(jToggleButton3);
+        jToggleButton3.setBounds(302, 341, 77, 23);
 
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("ITEM CODE");
+        additempage.add(jLabel14);
+        jLabel14.setBounds(67, 59, 70, 16);
 
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("ITEM NAME");
+        additempage.add(jLabel15);
+        jLabel15.setBounds(67, 93, 65, 16);
 
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("SUPPLIER");
+        additempage.add(jLabel16);
+        jLabel16.setBounds(67, 133, 54, 16);
 
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("MINIMUM ORDER QUANTITY");
+        additempage.add(jLabel17);
+        jLabel17.setBounds(67, 173, 165, 16);
 
+        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("PRICE");
+        additempage.add(jLabel18);
+        jLabel18.setBounds(67, 213, 32, 16);
 
+        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("MINIMUM QUANTITY");
+        additempage.add(jLabel19);
+        jLabel19.setBounds(67, 253, 122, 16);
 
-        javax.swing.GroupLayout additempageLayout = new javax.swing.GroupLayout(additempage);
-        additempage.setLayout(additempageLayout);
-        additempageLayout.setHorizontalGroup(
-            additempageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, additempageLayout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addGroup(additempageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(additempageLayout.createSequentialGroup()
-                        .addComponent(jLabel17)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
-                        .addComponent(MOQSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, additempageLayout.createSequentialGroup()
-                        .addGroup(additempageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel18)
-                            .addComponent(jLabel16)
-                            .addComponent(jLabel15)
-                            .addComponent(jLabel14)
-                            .addGroup(additempageLayout.createSequentialGroup()
-                                .addGap(19, 19, 19)
-                                .addComponent(CreateNewItemButton)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(additempageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(PRICETextField, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(SUPPLIERTextField, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(ITEMNAMETextField, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, additempageLayout.createSequentialGroup()
-                                .addComponent(jToggleButton3)
-                                .addGap(31, 31, 31))
-                            .addComponent(ITEMCODETextField, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, additempageLayout.createSequentialGroup()
-                        .addComponent(jLabel19)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(MINIMUMSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(70, 70, 70))
-        );
-        additempageLayout.setVerticalGroup(
-            additempageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(additempageLayout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addGroup(additempageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ITEMCODETextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(additempageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ITEMNAMETextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15))
-                .addGap(18, 18, 18)
-                .addGroup(additempageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SUPPLIERTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16))
-                .addGap(18, 18, 18)
-                .addGroup(additempageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(MOQSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17))
-                .addGap(18, 18, 18)
-                .addGroup(additempageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PRICETextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel18))
-                .addGap(18, 18, 18)
-                .addGroup(additempageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(MINIMUMSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel19))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
-                .addGroup(additempageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CreateNewItemButton)
-                    .addComponent(jToggleButton3))
-                .addGap(36, 36, 36))
-        );
+        jLabel34.setIcon(new javax.swing.ImageIcon("C:\\Users\\kanth\\Downloads\\Sublime Vivid.jpg")); // NOI18N
+        additempage.add(jLabel34);
+        jLabel34.setBounds(0, 0, 480, 400);
 
         Parent.add(additempage, "card7");
+
+        removeoptionspage.setLayout(null);
 
         removeqtyremoveoptionspagebutton.setText("REMOVE QUANTITY");
         removeqtyremoveoptionspagebutton.addActionListener(new java.awt.event.ActionListener() {
@@ -888,6 +850,8 @@ public class maingui extends javax.swing.JFrame {
                 removeqtyremoveoptionspagebuttonActionPerformed(evt);
             }
         });
+        removeoptionspage.add(removeqtyremoveoptionspagebutton);
+        removeqtyremoveoptionspagebutton.setBounds(67, 141, 170, 110);
 
         removeitemremoveoptionspagebutton.setText("REMOVE ITEM");
         removeitemremoveoptionspagebutton.addActionListener(new java.awt.event.ActionListener() {
@@ -895,121 +859,78 @@ public class maingui extends javax.swing.JFrame {
                 removeitemremoveoptionspagebuttonActionPerformed(evt);
             }
         });
+        removeoptionspage.add(removeitemremoveoptionspagebutton);
+        removeitemremoveoptionspagebutton.setBounds(255, 141, 170, 110);
 
-        javax.swing.GroupLayout removeoptionspageLayout = new javax.swing.GroupLayout(removeoptionspage);
-        removeoptionspage.setLayout(removeoptionspageLayout);
-        removeoptionspageLayout.setHorizontalGroup(
-            removeoptionspageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(removeoptionspageLayout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addComponent(removeqtyremoveoptionspagebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(removeitemremoveoptionspagebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
-        );
-        removeoptionspageLayout.setVerticalGroup(
-            removeoptionspageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(removeoptionspageLayout.createSequentialGroup()
-                .addGap(141, 141, 141)
-                .addGroup(removeoptionspageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(removeqtyremoveoptionspagebutton, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
-                    .addComponent(removeitemremoveoptionspagebutton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(149, Short.MAX_VALUE))
-        );
+        jLabel29.setIcon(new javax.swing.ImageIcon("C:\\Users\\kanth\\Downloads\\Sublime Vivid.jpg")); // NOI18N
+        removeoptionspage.add(jLabel29);
+        jLabel29.setBounds(0, 0, 480, 400);
 
         Parent.add(removeoptionspage, "card8");
 
+        removeqtypage.setLayout(null);
+        removeqtypage.add(jSpinner4);
+        jSpinner4.setBounds(376, 305, 64, 22);
+        removeqtypage.add(list3);
+        list3.setBounds(40, 38, 400, 239);
+
+        jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("ITEM CODE");
+        removeqtypage.add(jLabel20);
+        jLabel20.setBounds(40, 308, 62, 16);
 
+        jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setText("QUANTITY");
-
-        jTextField9.setText("jTextField4");
+        removeqtypage.add(jLabel21);
+        jLabel21.setBounds(284, 308, 70, 16);
 
         jToggleButton4.setText("REMOVE QUANTITY");
+        removeqtypage.add(jToggleButton4);
+        jToggleButton4.setBounds(170, 345, 137, 23);
 
-        javax.swing.GroupLayout removeqtypageLayout = new javax.swing.GroupLayout(removeqtypage);
-        removeqtypage.setLayout(removeqtypageLayout);
-        removeqtypageLayout.setHorizontalGroup(
-            removeqtypageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(removeqtypageLayout.createSequentialGroup()
-                .addGroup(removeqtypageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(removeqtypageLayout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addGroup(removeqtypageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(removeqtypageLayout.createSequentialGroup()
-                                .addComponent(jLabel20)
-                                .addGap(37, 37, 37)
-                                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel21)
-                                .addGap(34, 34, 34)
-                                .addComponent(jSpinner4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(list3, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(removeqtypageLayout.createSequentialGroup()
-                        .addGap(170, 170, 170)
-                        .addComponent(jToggleButton4)))
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
-        removeqtypageLayout.setVerticalGroup(
-            removeqtypageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, removeqtypageLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(list3, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addGroup(removeqtypageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jSpinner4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel20)
-                    .addComponent(jLabel21)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jToggleButton4)
-                .addContainerGap(32, Short.MAX_VALUE))
-        );
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        removeqtypage.add(jComboBox1);
+        jComboBox1.setBounds(119, 305, 95, 22);
+
+        jLabel35.setIcon(new javax.swing.ImageIcon("C:\\Users\\kanth\\Downloads\\Sublime Vivid.jpg")); // NOI18N
+        removeqtypage.add(jLabel35);
+        jLabel35.setBounds(0, 0, 480, 400);
 
         Parent.add(removeqtypage, "card9");
 
+        removeitempage.setLayout(null);
+        removeitempage.add(list4);
+        list4.setBounds(40, 38, 400, 239);
+
+        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
         jLabel22.setText("ITEM CODE");
+        removeitempage.add(jLabel22);
+        jLabel22.setBounds(111, 303, 70, 16);
 
-        jTextField10.setText("jTextField4");
+        jToggleButton5.setText("REMOVE ITEM");
+        removeitempage.add(jToggleButton5);
+        jToggleButton5.setBounds(152, 340, 106, 23);
 
-        jToggleButton5.setText("REMOVE QUANTITY");
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        removeitempage.add(jComboBox2);
+        jComboBox2.setBounds(218, 300, 120, 22);
 
-        javax.swing.GroupLayout removeitempageLayout = new javax.swing.GroupLayout(removeitempage);
-        removeitempage.setLayout(removeitempageLayout);
-        removeitempageLayout.setHorizontalGroup(
-            removeitempageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(removeitempageLayout.createSequentialGroup()
-                .addGroup(removeitempageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(removeitempageLayout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(list4, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(removeitempageLayout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(jLabel22)
-                        .addGap(137, 137, 137)
-                        .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(removeitempageLayout.createSequentialGroup()
-                        .addGap(152, 152, 152)
-                        .addComponent(jToggleButton5)))
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
-        removeitempageLayout.setVerticalGroup(
-            removeitempageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(removeitempageLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(list4, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23)
-                .addGroup(removeitempageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel22)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jToggleButton5)
-                .addContainerGap(37, Short.MAX_VALUE))
-        );
+        jLabel32.setIcon(new javax.swing.ImageIcon("C:\\Users\\kanth\\Downloads\\Sublime Vivid.jpg")); // NOI18N
+        removeitempage.add(jLabel32);
+        jLabel32.setBounds(0, 0, 480, 400);
 
         Parent.add(removeitempage, "card10");
 
+        inventorypage.setLayout(null);
+        inventorypage.add(list5);
+        list5.setBounds(55, 142, 395, 183);
+
         jToggleButton6.setText("GENERATE INVENTORY STATUS DOCUMENT");
+        inventorypage.add(jToggleButton6);
+        jToggleButton6.setBounds(118, 346, 268, 23);
 
         javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
         panel1.setLayout(panel1Layout);
@@ -1022,109 +943,66 @@ public class maingui extends javax.swing.JFrame {
             .addGap(0, 112, Short.MAX_VALUE)
         );
 
+        inventorypage.add(panel1);
+        panel1.setBounds(344, 20, 112, 112);
+
         jTextField11.setText("jTextField11");
+        inventorypage.add(jTextField11);
+        jTextField11.setBounds(244, 20, 77, 22);
 
         jTextField12.setText("jTextField12");
+        inventorypage.add(jTextField12);
+        jTextField12.setBounds(244, 48, 77, 22);
 
         jTextField13.setText("jTextField13");
+        inventorypage.add(jTextField13);
+        jTextField13.setBounds(244, 76, 77, 22);
 
         jTextField14.setText("jTextField14");
+        inventorypage.add(jTextField14);
+        jTextField14.setBounds(244, 104, 77, 22);
 
+        jLabel23.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
         jLabel23.setText("TOTAL ITEMS");
+        inventorypage.add(jLabel23);
+        jLabel23.setBounds(31, 23, 90, 16);
 
+        jLabel24.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
         jLabel24.setText("TOTAL QUANTITY");
+        inventorypage.add(jLabel24);
+        jLabel24.setBounds(31, 51, 100, 16);
 
-        jLabel25.setText("ITEMS BELOW MINIMUM STOCK");
+        jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel25.setText("BELOW MINIMUM STOCK");
+        inventorypage.add(jLabel25);
+        jLabel25.setBounds(31, 79, 144, 16);
 
-        jLabel26.setText("ITEMS OUT OF STOCK");
+        jLabel26.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel26.setText("OUT OF STOCK");
+        inventorypage.add(jLabel26);
+        jLabel26.setBounds(31, 107, 84, 16);
 
-        javax.swing.GroupLayout inventorypageLayout = new javax.swing.GroupLayout(inventorypage);
-        inventorypage.setLayout(inventorypageLayout);
-        inventorypageLayout.setHorizontalGroup(
-            inventorypageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(inventorypageLayout.createSequentialGroup()
-                .addGroup(inventorypageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(inventorypageLayout.createSequentialGroup()
-                        .addGroup(inventorypageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(inventorypageLayout.createSequentialGroup()
-                                .addGap(43, 43, 43)
-                                .addComponent(list5, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(inventorypageLayout.createSequentialGroup()
-                                .addGap(106, 106, 106)
-                                .addComponent(jToggleButton6)))
-                        .addGap(6, 6, 6))
-                    .addGroup(inventorypageLayout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(inventorypageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel24)
-                            .addComponent(jLabel25)
-                            .addComponent(jLabel23)
-                            .addComponent(jLabel26))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                        .addGroup(inventorypageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(23, 23, 23)
-                        .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(25, Short.MAX_VALUE))
-        );
-        inventorypageLayout.setVerticalGroup(
-            inventorypageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(inventorypageLayout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
-                .addGroup(inventorypageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(inventorypageLayout.createSequentialGroup()
-                        .addGroup(inventorypageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel23))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(inventorypageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel24))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(inventorypageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel25))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(inventorypageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel26))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(list5, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
-                .addComponent(jToggleButton6)
-                .addGap(31, 31, 31))
-        );
+        jLabel30.setIcon(new javax.swing.ImageIcon("C:\\Users\\kanth\\Downloads\\Sublime Vivid.jpg")); // NOI18N
+        inventorypage.add(jLabel30);
+        jLabel30.setBounds(0, 0, 480, 400);
 
         Parent.add(inventorypage, "card11");
 
-        jToggleButton7.setText("GENERATE ORDER REQUEST DOCUMENT");
+        orderpage.setLayout(null);
+        orderpage.add(list6);
+        list6.setBounds(45, 36, 386, 245);
 
-        javax.swing.GroupLayout orderpageLayout = new javax.swing.GroupLayout(orderpage);
-        orderpage.setLayout(orderpageLayout);
-        orderpageLayout.setHorizontalGroup(
-            orderpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(orderpageLayout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(list6, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(49, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, orderpageLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jToggleButton7)
-                .addGap(103, 103, 103))
-        );
-        orderpageLayout.setVerticalGroup(
-            orderpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(orderpageLayout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(list6, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(jToggleButton7)
-                .addContainerGap(56, Short.MAX_VALUE))
-        );
+        jToggleButton7.setText("GENERATE ORDER REQUEST DOCUMENT");
+        orderpage.add(jToggleButton7);
+        jToggleButton7.setBounds(129, 321, 248, 23);
+
+        jLabel31.setIcon(new javax.swing.ImageIcon("C:\\Users\\kanth\\Downloads\\Sublime Vivid.jpg")); // NOI18N
+        orderpage.add(jLabel31);
+        jLabel31.setBounds(0, 0, 480, 400);
 
         Parent.add(orderpage, "card12");
 
@@ -1134,15 +1012,13 @@ public class maingui extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    //=============================Login/Registration Panel==============================
-    //this is the registration button used to change panels tot he regsitration page.
     private void registersidepanelbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registersidepanelbuttonActionPerformed
         // TODO add your handling code here:
         sidepanel.removeAll();
         sidepanel.add(Registrationsidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-
+        
         Parent.removeAll();
         Parent.add(registrationpage);
         Parent.repaint();
@@ -1155,7 +1031,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(Loginsidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-
+        
         Parent.removeAll();
         Parent.add(Loginpage);
         Parent.repaint();
@@ -1168,7 +1044,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(Loginsidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-
+        
         Parent.removeAll();
         Parent.add(Loginpage);
         Parent.repaint();
@@ -1181,7 +1057,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(Homesidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-
+        
         Parent.removeAll();
         Parent.add(homepage);
         Parent.repaint();
@@ -1194,7 +1070,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-
+        
         Parent.removeAll();
         Parent.add(addoptionspage);
         Parent.repaint();
@@ -1207,7 +1083,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-
+        
         Parent.removeAll();
         Parent.add(removeoptionspage);
         Parent.repaint();
@@ -1220,7 +1096,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(inventorysidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-
+        
         Parent.removeAll();
         Parent.add(inventorypage);
         Parent.repaint();
@@ -1233,7 +1109,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(ordersidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-
+        
         Parent.removeAll();
         Parent.add(orderpage);
         Parent.repaint();
@@ -1242,11 +1118,11 @@ public class maingui extends javax.swing.JFrame {
 
     private void LogoutoptionssidepanelbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutoptionssidepanelbuttonActionPerformed
         // TODO add your handling code here:
-        sidepanel.removeAll();
+         sidepanel.removeAll();
         sidepanel.add(Loginsidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-
+        
         Parent.removeAll();
         Parent.add(Loginpage);
         Parent.repaint();
@@ -1259,7 +1135,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(Homesidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-
+        
         Parent.removeAll();
         Parent.add(homepage);
         Parent.repaint();
@@ -1272,7 +1148,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-
+        
         Parent.removeAll();
         Parent.add(addoptionspage);
         Parent.repaint();
@@ -1285,7 +1161,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-
+        
         Parent.removeAll();
         Parent.add(removeoptionspage);
         Parent.repaint();
@@ -1298,7 +1174,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(ordersidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-
+        
         Parent.removeAll();
         Parent.add(orderpage);
         Parent.repaint();
@@ -1307,11 +1183,11 @@ public class maingui extends javax.swing.JFrame {
 
     private void Logoutinventorysidepanelbutton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Logoutinventorysidepanelbutton1ActionPerformed
         // TODO add your handling code here:
-        sidepanel.removeAll();
+          sidepanel.removeAll();
         sidepanel.add(Loginsidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-
+        
         Parent.removeAll();
         Parent.add(Loginpage);
         Parent.repaint();
@@ -1324,7 +1200,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(Homesidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-
+        
         Parent.removeAll();
         Parent.add(homepage);
         Parent.repaint();
@@ -1333,11 +1209,11 @@ public class maingui extends javax.swing.JFrame {
 
     private void additemordersidepanelbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_additemordersidepanelbuttonActionPerformed
         // TODO add your handling code here:
-        sidepanel.removeAll();
+         sidepanel.removeAll();
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-
+        
         Parent.removeAll();
         Parent.add(addoptionspage);
         Parent.repaint();
@@ -1346,11 +1222,11 @@ public class maingui extends javax.swing.JFrame {
 
     private void removeitemordersidepanelbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeitemordersidepanelbuttonActionPerformed
         // TODO add your handling code here:
-        sidepanel.removeAll();
+         sidepanel.removeAll();
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-
+        
         Parent.removeAll();
         Parent.add(removeoptionspage);
         Parent.repaint();
@@ -1363,7 +1239,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(inventorysidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-
+        
         Parent.removeAll();
         Parent.add(inventorypage);
         Parent.repaint();
@@ -1372,11 +1248,11 @@ public class maingui extends javax.swing.JFrame {
 
     private void LogoutordersidepanelbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutordersidepanelbuttonActionPerformed
         // TODO add your handling code here:
-        sidepanel.removeAll();
+         sidepanel.removeAll();
         sidepanel.add(Loginsidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-
+        
         Parent.removeAll();
         Parent.add(Loginpage);
         Parent.repaint();
@@ -1389,49 +1265,25 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(Homesidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-
+        
         Parent.removeAll();
         Parent.add(homepage);
         Parent.repaint();
         Parent.revalidate();
     }//GEN-LAST:event_loginloginpagebuttonActionPerformed
 
-    private void RegisterSaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterSaveButtonActionPerformed
+    private void registerregistrationpagebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerregistrationpagebuttonActionPerformed
         // TODO add your handling code here:
-        try {
-            String name = RegisterNameTextField.getText();
-            String uid = RegisterUIDTextField.getText();
-            String password = new String(RegisterPasswordField.getPassword());
-            String confirmPassword = new String(RegisterPasswordConfirmField.getPassword());
-            if (!confirmPassword.equals(password)) {
-                throw new Exception("Password does not match.");
-            }
-            userMap.put(uid, new Security(name, uid, password));
-            InventoryDBManager i = new InventoryDBManager();
-            i.UpdateSecurityTable(userMap);
-
-            RegisterNameTextField.setText("");
-            RegisterUIDTextField.setText("");
-            RegisterPasswordField.setText("");
-            RegisterPasswordConfirmField.setText("");
-
-            JOptionPane.showMessageDialog(this, "User registered successfully!");
-
-            //switches back to the login panel.
-            sidepanel.removeAll();
-            sidepanel.add(Loginsidepanel);
-            sidepanel.repaint();
-            sidepanel.revalidate();
-
-            Parent.removeAll();
-            Parent.add(Loginpage);
-            Parent.repaint();
-            Parent.revalidate();
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error: " + e.getMessage(), "Registration Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_RegisterSaveButtonActionPerformed
+        sidepanel.removeAll();
+        sidepanel.add(Loginsidepanel);
+        sidepanel.repaint();
+        sidepanel.revalidate();
+        
+        Parent.removeAll();
+        Parent.add(Loginpage);
+        Parent.repaint();
+        Parent.revalidate();
+    }//GEN-LAST:event_registerregistrationpagebuttonActionPerformed
 
     private void additemhomepagebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_additemhomepagebuttonActionPerformed
         // TODO add your handling code here:
@@ -1439,7 +1291,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-
+        
         Parent.removeAll();
         Parent.add(addoptionspage);
         Parent.repaint();
@@ -1452,7 +1304,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-
+        
         Parent.removeAll();
         Parent.add(removeoptionspage);
         Parent.repaint();
@@ -1465,7 +1317,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(inventorysidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-
+        
         Parent.removeAll();
         Parent.add(inventorypage);
         Parent.repaint();
@@ -1478,7 +1330,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(ordersidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-
+        
         Parent.removeAll();
         Parent.add(orderpage);
         Parent.repaint();
@@ -1491,7 +1343,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-
+        
         Parent.removeAll();
         Parent.add(addqtypage);
         Parent.repaint();
@@ -1504,7 +1356,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-
+        
         Parent.removeAll();
         Parent.add(additempage);
         Parent.repaint();
@@ -1517,7 +1369,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-
+        
         Parent.removeAll();
         Parent.add(removeqtypage);
         Parent.repaint();
@@ -1530,29 +1382,16 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-
+        
         Parent.removeAll();
         Parent.add(removeitempage);
         Parent.repaint();
         Parent.revalidate();
     }//GEN-LAST:event_removeitemremoveoptionspagebuttonActionPerformed
-    //Create new Item Page, and Item is saved to database when added
-    private void CreateNewItemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateNewItemButtonActionPerformed
-        String code = ITEMCODETextField.getText();
-        String name = ITEMNAMETextField.getText();
-        String supplier = SUPPLIERTextField.getText();
-        Integer moq = (Integer)MOQSpinner.getValue();
-        Double price = Double.parseDouble(PRICETextField.getText()); // needs to be converted to a double
-        Integer min = (Integer)MINIMUMSpinner.getValue();
-        
-        //Item(String itemCode, String itemName, int qty, int moq, int stkMin, double price)
-        inventoryMap.put(code, new Item(code,name,1, moq, min, price));
-        InventoryDBManager i = new InventoryDBManager();
-        i.UpdateInventoryTable(inventoryMap);
-        
-        JOptionPane.showMessageDialog(this, "Item Registered Successfully!");
-    }//GEN-LAST:event_CreateNewItemButtonActionPerformed
 
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1586,27 +1425,15 @@ public class maingui extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton CreateNewItemButton;
     private javax.swing.JPanel Homesidepanel;
-    private javax.swing.JTextField ITEMCODETextField;
-    private javax.swing.JTextField ITEMNAMETextField;
     private javax.swing.JPanel Loginpage;
     private javax.swing.JPanel Loginsidepanel;
     private javax.swing.JToggleButton Logouthomesidepanelbutton;
     private javax.swing.JToggleButton Logoutinventorysidepanelbutton1;
     private javax.swing.JToggleButton Logoutoptionssidepanelbutton;
     private javax.swing.JToggleButton Logoutordersidepanelbutton;
-    private javax.swing.JSpinner MINIMUMSpinner;
-    private javax.swing.JSpinner MOQSpinner;
-    private javax.swing.JTextField PRICETextField;
     private javax.swing.JPanel Parent;
-    private javax.swing.JTextField RegisterNameTextField;
-    private javax.swing.JPasswordField RegisterPasswordConfirmField;
-    private javax.swing.JPasswordField RegisterPasswordField;
-    private javax.swing.JToggleButton RegisterSaveButton;
-    private javax.swing.JTextField RegisterUIDTextField;
     private javax.swing.JPanel Registrationsidepanel;
-    private javax.swing.JTextField SUPPLIERTextField;
     private javax.swing.JToggleButton additemaddoptionspage;
     private javax.swing.JToggleButton additemhomepagebutton;
     private javax.swing.JToggleButton additeminventorysidepanelbutton;
@@ -1625,6 +1452,9 @@ public class maingui extends javax.swing.JFrame {
     private javax.swing.JPanel inventorypage;
     private javax.swing.JPanel inventorysidepanel;
     private javax.swing.JToggleButton inventorystatushomepagebutton;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1644,7 +1474,16 @@ public class maingui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1652,17 +1491,25 @@ public class maingui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JPasswordField jPasswordField2;
+    private javax.swing.JPasswordField jPasswordField3;
     private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JSpinner jSpinner2;
+    private javax.swing.JSpinner jSpinner3;
     private javax.swing.JSpinner jSpinner4;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
     private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JToggleButton jToggleButton4;
     private javax.swing.JToggleButton jToggleButton5;
@@ -1683,6 +1530,7 @@ public class maingui extends javax.swing.JFrame {
     private javax.swing.JToggleButton orderrequestoptionssidepanelbutton;
     private javax.swing.JPanel ordersidepanel;
     private java.awt.Panel panel1;
+    private javax.swing.JToggleButton registerregistrationpagebutton;
     private javax.swing.JToggleButton registersidepanelbutton;
     private javax.swing.JPanel registrationpage;
     private javax.swing.JToggleButton removeitemhomepagebutton;
