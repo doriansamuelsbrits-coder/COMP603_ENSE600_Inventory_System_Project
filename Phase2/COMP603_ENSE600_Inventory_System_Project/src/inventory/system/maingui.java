@@ -1,17 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+package inventory.system;
 
-/**
- *
- * @author kanth
- */
+import java.util.HashMap;
+import java.util.Map;
+import javax.swing.JOptionPane;
+
 public class maingui extends javax.swing.JFrame {
 
-    /**
-     * Creates new form maingui
-     */
+    private Map<String, Security> userMap = InventorySystem.getSecurityMap();
+    private Map<String, Item> inventoryMap = InventorySystem.getHashMap();
+
     public maingui() {
         initComponents();
     }
@@ -65,15 +62,15 @@ public class maingui extends javax.swing.JFrame {
         loginloginpagebutton = new javax.swing.JToggleButton();
         jLabel7 = new javax.swing.JLabel();
         registrationpage = new javax.swing.JPanel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        RegisterNameTextField = new javax.swing.JTextField();
+        RegisterUIDTextField = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jPasswordField2 = new javax.swing.JPasswordField();
+        RegisterPasswordField = new javax.swing.JPasswordField();
         jLabel11 = new javax.swing.JLabel();
-        jPasswordField3 = new javax.swing.JPasswordField();
-        registerregistrationpagebutton = new javax.swing.JToggleButton();
+        RegisterPasswordConfirmField = new javax.swing.JPasswordField();
+        RegisterSaveButton = new javax.swing.JToggleButton();
         homepage = new javax.swing.JPanel();
         removeitemhomepagebutton = new javax.swing.JToggleButton();
         inventorystatushomepagebutton = new javax.swing.JToggleButton();
@@ -90,13 +87,13 @@ public class maingui extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jToggleButton1 = new javax.swing.JToggleButton();
         additempage = new javax.swing.JPanel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jSpinner2 = new javax.swing.JSpinner();
-        jTextField8 = new javax.swing.JTextField();
-        jSpinner3 = new javax.swing.JSpinner();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        ITEMCODETextField = new javax.swing.JTextField();
+        ITEMNAMETextField = new javax.swing.JTextField();
+        SUPPLIERTextField = new javax.swing.JTextField();
+        MOQSpinner = new javax.swing.JSpinner();
+        PRICETextField = new javax.swing.JTextField();
+        MINIMUMSpinner = new javax.swing.JSpinner();
+        CreateNewItemButton = new javax.swing.JToggleButton();
         jToggleButton3 = new javax.swing.JToggleButton();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -201,7 +198,7 @@ public class maingui extends javax.swing.JFrame {
         RegistrationsidepanelLayout.setHorizontalGroup(
             RegistrationsidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistrationsidepanelLayout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
+                .addContainerGap(23, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18))
             .addGroup(RegistrationsidepanelLayout.createSequentialGroup()
@@ -563,9 +560,10 @@ public class maingui extends javax.swing.JFrame {
 
         Parent.add(Loginpage, "card2");
 
-        jTextField2.setText("jTextField2");
+        RegisterNameTextField.setText("name");
+        RegisterNameTextField.setName("RegisterNameTextField"); // NOI18N
 
-        jTextField3.setText("jTextField3");
+        RegisterUIDTextField.setText("user id");
 
         jLabel8.setText("NAME");
 
@@ -573,16 +571,12 @@ public class maingui extends javax.swing.JFrame {
 
         jLabel10.setText("PASSWORD");
 
-        jPasswordField2.setText("jPasswordField2");
-
         jLabel11.setText("RE-TYPE PASSWORD");
 
-        jPasswordField3.setText("jPasswordField3");
-
-        registerregistrationpagebutton.setText("Register");
-        registerregistrationpagebutton.addActionListener(new java.awt.event.ActionListener() {
+        RegisterSaveButton.setText("Register");
+        RegisterSaveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                registerregistrationpagebuttonActionPerformed(evt);
+                RegisterSaveButtonActionPerformed(evt);
             }
         });
 
@@ -601,21 +595,21 @@ public class maingui extends javax.swing.JFrame {
             .addGroup(registrationpageLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(registrationpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField2)
-                    .addComponent(jTextField3)
-                    .addComponent(jPasswordField2, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
-                    .addComponent(jPasswordField3))
+                    .addComponent(RegisterNameTextField)
+                    .addComponent(RegisterUIDTextField)
+                    .addComponent(RegisterPasswordField, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
+                    .addComponent(RegisterPasswordConfirmField))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registrationpageLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(registerregistrationpagebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RegisterSaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(178, 178, 178))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registrationpageLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel10)
                 .addGap(205, 205, 205))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registrationpageLayout.createSequentialGroup()
-                .addContainerGap(187, Short.MAX_VALUE)
+                .addContainerGap(186, Short.MAX_VALUE)
                 .addComponent(jLabel11)
                 .addGap(183, 183, 183))
         );
@@ -625,21 +619,21 @@ public class maingui extends javax.swing.JFrame {
                 .addGap(59, 59, 59)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RegisterNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RegisterUIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RegisterPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RegisterPasswordConfirmField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
-                .addComponent(registerregistrationpagebutton)
+                .addComponent(RegisterSaveButton)
                 .addContainerGap(56, Short.MAX_VALUE))
         );
 
@@ -762,7 +756,7 @@ public class maingui extends javax.swing.JFrame {
                 .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(59, 59, 59)
                 .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(63, 63, 63))
             .addGroup(addqtypageLayout.createSequentialGroup()
@@ -793,15 +787,15 @@ public class maingui extends javax.swing.JFrame {
 
         Parent.add(addqtypage, "card6");
 
-        jTextField5.setText("jTextField5");
+        ITEMCODETextField.setName("ITEMCODETextField"); // NOI18N
 
-        jTextField6.setText("jTextField6");
-
-        jTextField7.setText("jTextField7");
-
-        jTextField8.setText("jTextField8");
-
-        jToggleButton2.setText("CREATE");
+        CreateNewItemButton.setText("CREATE");
+        CreateNewItemButton.setName("CREATEBUTTON"); // NOI18N
+        CreateNewItemButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CreateNewItemButtonActionPerformed(evt);
+            }
+        });
 
         jToggleButton3.setText("REFRESH");
 
@@ -827,7 +821,7 @@ public class maingui extends javax.swing.JFrame {
                     .addGroup(additempageLayout.createSequentialGroup()
                         .addComponent(jLabel17)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
-                        .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(MOQSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, additempageLayout.createSequentialGroup()
                         .addGroup(additempageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel18)
@@ -836,20 +830,20 @@ public class maingui extends javax.swing.JFrame {
                             .addComponent(jLabel14)
                             .addGroup(additempageLayout.createSequentialGroup()
                                 .addGap(19, 19, 19)
-                                .addComponent(jToggleButton2)))
+                                .addComponent(CreateNewItemButton)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(additempageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField8, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(PRICETextField, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(SUPPLIERTextField, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(ITEMNAMETextField, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, additempageLayout.createSequentialGroup()
                                 .addComponent(jToggleButton3)
                                 .addGap(31, 31, 31))
-                            .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addComponent(ITEMCODETextField, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, additempageLayout.createSequentialGroup()
                         .addComponent(jLabel19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(MINIMUMSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(70, 70, 70))
         );
         additempageLayout.setVerticalGroup(
@@ -857,31 +851,31 @@ public class maingui extends javax.swing.JFrame {
             .addGroup(additempageLayout.createSequentialGroup()
                 .addGap(56, 56, 56)
                 .addGroup(additempageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ITEMCODETextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(additempageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ITEMNAMETextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel15))
                 .addGap(18, 18, 18)
                 .addGroup(additempageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SUPPLIERTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel16))
                 .addGap(18, 18, 18)
                 .addGroup(additempageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MOQSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel17))
                 .addGap(18, 18, 18)
                 .addGroup(additempageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PRICETextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18))
                 .addGap(18, 18, 18)
                 .addGroup(additempageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MINIMUMSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel19))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addGroup(additempageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton2)
+                    .addComponent(CreateNewItemButton)
                     .addComponent(jToggleButton3))
                 .addGap(36, 36, 36))
         );
@@ -1074,7 +1068,7 @@ public class maingui extends javax.swing.JFrame {
                             .addComponent(jTextField14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(23, 23, 23)
                         .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         inventorypageLayout.setVerticalGroup(
             inventorypageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1140,13 +1134,15 @@ public class maingui extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //=============================Login/Registration Panel==============================
+    //this is the registration button used to change panels tot he regsitration page.
     private void registersidepanelbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registersidepanelbuttonActionPerformed
         // TODO add your handling code here:
         sidepanel.removeAll();
         sidepanel.add(Registrationsidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(registrationpage);
         Parent.repaint();
@@ -1159,7 +1155,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(Loginsidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(Loginpage);
         Parent.repaint();
@@ -1172,7 +1168,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(Loginsidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(Loginpage);
         Parent.repaint();
@@ -1185,7 +1181,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(Homesidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(homepage);
         Parent.repaint();
@@ -1198,7 +1194,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(addoptionspage);
         Parent.repaint();
@@ -1211,7 +1207,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(removeoptionspage);
         Parent.repaint();
@@ -1224,7 +1220,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(inventorysidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(inventorypage);
         Parent.repaint();
@@ -1237,7 +1233,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(ordersidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(orderpage);
         Parent.repaint();
@@ -1246,11 +1242,11 @@ public class maingui extends javax.swing.JFrame {
 
     private void LogoutoptionssidepanelbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutoptionssidepanelbuttonActionPerformed
         // TODO add your handling code here:
-         sidepanel.removeAll();
+        sidepanel.removeAll();
         sidepanel.add(Loginsidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(Loginpage);
         Parent.repaint();
@@ -1263,7 +1259,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(Homesidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(homepage);
         Parent.repaint();
@@ -1276,7 +1272,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(addoptionspage);
         Parent.repaint();
@@ -1289,7 +1285,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(removeoptionspage);
         Parent.repaint();
@@ -1302,7 +1298,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(ordersidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(orderpage);
         Parent.repaint();
@@ -1311,11 +1307,11 @@ public class maingui extends javax.swing.JFrame {
 
     private void Logoutinventorysidepanelbutton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Logoutinventorysidepanelbutton1ActionPerformed
         // TODO add your handling code here:
-          sidepanel.removeAll();
+        sidepanel.removeAll();
         sidepanel.add(Loginsidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(Loginpage);
         Parent.repaint();
@@ -1328,7 +1324,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(Homesidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(homepage);
         Parent.repaint();
@@ -1337,11 +1333,11 @@ public class maingui extends javax.swing.JFrame {
 
     private void additemordersidepanelbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_additemordersidepanelbuttonActionPerformed
         // TODO add your handling code here:
-         sidepanel.removeAll();
+        sidepanel.removeAll();
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(addoptionspage);
         Parent.repaint();
@@ -1350,11 +1346,11 @@ public class maingui extends javax.swing.JFrame {
 
     private void removeitemordersidepanelbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeitemordersidepanelbuttonActionPerformed
         // TODO add your handling code here:
-         sidepanel.removeAll();
+        sidepanel.removeAll();
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(removeoptionspage);
         Parent.repaint();
@@ -1367,7 +1363,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(inventorysidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(inventorypage);
         Parent.repaint();
@@ -1376,11 +1372,11 @@ public class maingui extends javax.swing.JFrame {
 
     private void LogoutordersidepanelbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutordersidepanelbuttonActionPerformed
         // TODO add your handling code here:
-         sidepanel.removeAll();
+        sidepanel.removeAll();
         sidepanel.add(Loginsidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(Loginpage);
         Parent.repaint();
@@ -1393,25 +1389,49 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(Homesidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(homepage);
         Parent.repaint();
         Parent.revalidate();
     }//GEN-LAST:event_loginloginpagebuttonActionPerformed
 
-    private void registerregistrationpagebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerregistrationpagebuttonActionPerformed
+    private void RegisterSaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterSaveButtonActionPerformed
         // TODO add your handling code here:
-        sidepanel.removeAll();
-        sidepanel.add(Loginsidepanel);
-        sidepanel.repaint();
-        sidepanel.revalidate();
-        
-        Parent.removeAll();
-        Parent.add(Loginpage);
-        Parent.repaint();
-        Parent.revalidate();
-    }//GEN-LAST:event_registerregistrationpagebuttonActionPerformed
+        try {
+            String name = RegisterNameTextField.getText();
+            String uid = RegisterUIDTextField.getText();
+            String password = new String(RegisterPasswordField.getPassword());
+            String confirmPassword = new String(RegisterPasswordConfirmField.getPassword());
+            if (!confirmPassword.equals(password)) {
+                throw new Exception("Password does not match.");
+            }
+            userMap.put(uid, new Security(name, uid, password));
+            InventoryDBManager i = new InventoryDBManager();
+            i.InsertIntoSecurityTable(userMap);
+
+            RegisterNameTextField.setText("");
+            RegisterUIDTextField.setText("");
+            RegisterPasswordField.setText("");
+            RegisterPasswordConfirmField.setText("");
+
+            JOptionPane.showMessageDialog(this, "User registered successfully!");
+
+            //switches back to the login panel.
+            sidepanel.removeAll();
+            sidepanel.add(Loginsidepanel);
+            sidepanel.repaint();
+            sidepanel.revalidate();
+
+            Parent.removeAll();
+            Parent.add(Loginpage);
+            Parent.repaint();
+            Parent.revalidate();
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error: " + e.getMessage(), "Registration Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_RegisterSaveButtonActionPerformed
 
     private void additemhomepagebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_additemhomepagebuttonActionPerformed
         // TODO add your handling code here:
@@ -1419,7 +1439,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(addoptionspage);
         Parent.repaint();
@@ -1432,7 +1452,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(removeoptionspage);
         Parent.repaint();
@@ -1445,7 +1465,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(inventorysidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(inventorypage);
         Parent.repaint();
@@ -1458,7 +1478,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(ordersidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(orderpage);
         Parent.repaint();
@@ -1471,7 +1491,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(addqtypage);
         Parent.repaint();
@@ -1484,7 +1504,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(additempage);
         Parent.repaint();
@@ -1497,7 +1517,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(removeqtypage);
         Parent.repaint();
@@ -1510,12 +1530,31 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(removeitempage);
         Parent.repaint();
         Parent.revalidate();
     }//GEN-LAST:event_removeitemremoveoptionspagebuttonActionPerformed
+
+    private void CreateNewItemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateNewItemButtonActionPerformed
+        
+        String code = ITEMCODETextField.getText();
+        String name = ITEMNAMETextField.getText();
+        String supplier = SUPPLIERTextField.getText();
+        Integer moq = (Integer)MOQSpinner.getValue();
+        Double price = Double.parseDouble(PRICETextField.getText()); // needs to be converted to a double
+        Integer min = (Integer)MINIMUMSpinner.getValue();
+        
+        //Item(String itemCode, String itemName, int qty, int moq, int stkMin, double price)
+        inventoryMap.put(code, new Item(code,name,1, moq, min, price));
+        InventoryDBManager i = new InventoryDBManager();
+        i.InsertIntoInventoryTable(inventoryMap);
+        
+        JOptionPane.showMessageDialog(this, "Item Registered Successfully!");
+        
+        
+    }//GEN-LAST:event_CreateNewItemButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1553,15 +1592,27 @@ public class maingui extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton CreateNewItemButton;
     private javax.swing.JPanel Homesidepanel;
+    private javax.swing.JTextField ITEMCODETextField;
+    private javax.swing.JTextField ITEMNAMETextField;
     private javax.swing.JPanel Loginpage;
     private javax.swing.JPanel Loginsidepanel;
     private javax.swing.JToggleButton Logouthomesidepanelbutton;
     private javax.swing.JToggleButton Logoutinventorysidepanelbutton1;
     private javax.swing.JToggleButton Logoutoptionssidepanelbutton;
     private javax.swing.JToggleButton Logoutordersidepanelbutton;
+    private javax.swing.JSpinner MINIMUMSpinner;
+    private javax.swing.JSpinner MOQSpinner;
+    private javax.swing.JTextField PRICETextField;
     private javax.swing.JPanel Parent;
+    private javax.swing.JTextField RegisterNameTextField;
+    private javax.swing.JPasswordField RegisterPasswordConfirmField;
+    private javax.swing.JPasswordField RegisterPasswordField;
+    private javax.swing.JToggleButton RegisterSaveButton;
+    private javax.swing.JTextField RegisterUIDTextField;
     private javax.swing.JPanel Registrationsidepanel;
+    private javax.swing.JTextField SUPPLIERTextField;
     private javax.swing.JToggleButton additemaddoptionspage;
     private javax.swing.JToggleButton additemhomepagebutton;
     private javax.swing.JToggleButton additeminventorysidepanelbutton;
@@ -1607,11 +1658,7 @@ public class maingui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
-    private javax.swing.JPasswordField jPasswordField3;
     private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JSpinner jSpinner2;
-    private javax.swing.JSpinner jSpinner3;
     private javax.swing.JSpinner jSpinner4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
@@ -1619,16 +1666,9 @@ public class maingui extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JToggleButton jToggleButton4;
     private javax.swing.JToggleButton jToggleButton5;
@@ -1649,7 +1689,6 @@ public class maingui extends javax.swing.JFrame {
     private javax.swing.JToggleButton orderrequestoptionssidepanelbutton;
     private javax.swing.JPanel ordersidepanel;
     private java.awt.Panel panel1;
-    private javax.swing.JToggleButton registerregistrationpagebutton;
     private javax.swing.JToggleButton registersidepanelbutton;
     private javax.swing.JPanel registrationpage;
     private javax.swing.JToggleButton removeitemhomepagebutton;

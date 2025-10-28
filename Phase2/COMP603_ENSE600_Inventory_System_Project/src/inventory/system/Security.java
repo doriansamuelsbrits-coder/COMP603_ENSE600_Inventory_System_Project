@@ -8,10 +8,10 @@ public class Security {
     private String password;
     private String employeeName;
     private String statusPriority;
-    //positions used to verify valid employee status
+    //positions used to verify valid employee status (Default)
     private static final String[] positions = {"Employee", "Manager", "CEO", "Director", "Admin"};
 
-    //This COnstructor will be called if a admin is setting that employees positition manually.
+    //This COnstructor will be called if a admin is setting that employees positition manually (Future Development).
     public Security(String employeename, String userName, String passWord, String sp) {
         this.employeeName = employeename;
         this.username = userName;

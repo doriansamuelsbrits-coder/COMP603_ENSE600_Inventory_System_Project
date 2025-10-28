@@ -13,11 +13,11 @@ missing or is deleted
 */
 public class InventoryManager {
 
+    //Saves Inventory to TXT file for reading
     public static void saveInventory(Map<String, Item> inventory, String filePath) {
         try (PrintWriter pw = new PrintWriter(new FileWriter(filePath))) {
             pw.println("Item Code  | Item Name  | Qty | MOQ | Stk Min |  Price ");
             pw.println("-------------------------------------------------------");
-
             for (Item item : inventory.values()) {
                 pw.println(item.toString());
             }
