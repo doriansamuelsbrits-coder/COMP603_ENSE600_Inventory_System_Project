@@ -85,10 +85,10 @@ public class maingui extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         addqtypage = new javax.swing.JPanel();
         ITEMLISTField = new java.awt.List();
-        jSpinner1 = new javax.swing.JSpinner();
+        ITEMQTYSpinner = new javax.swing.JSpinner();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        ITEMADDQTYButton = new javax.swing.JToggleButton();
         ITEMCODEBox = new javax.swing.JComboBox<>();
         jLabel33 = new javax.swing.JLabel();
         additempage = new javax.swing.JPanel();
@@ -736,8 +736,8 @@ public class maingui extends javax.swing.JFrame {
         addqtypage.setLayout(null);
         addqtypage.add(ITEMLISTField);
         ITEMLISTField.setBounds(39, 50, 400, 239);
-        addqtypage.add(jSpinner1);
-        jSpinner1.setBounds(350, 310, 64, 22);
+        addqtypage.add(ITEMQTYSpinner);
+        ITEMQTYSpinner.setBounds(350, 310, 64, 22);
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
@@ -751,9 +751,14 @@ public class maingui extends javax.swing.JFrame {
         addqtypage.add(jLabel13);
         jLabel13.setBounds(270, 310, 80, 16);
 
-        jToggleButton1.setText("ADD QUANTITY");
-        addqtypage.add(jToggleButton1);
-        jToggleButton1.setBounds(154, 350, 115, 23);
+        ITEMADDQTYButton.setText("ADD QUANTITY");
+        ITEMADDQTYButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ITEMADDQTYButtonActionPerformed(evt);
+            }
+        });
+        addqtypage.add(ITEMADDQTYButton);
+        ITEMADDQTYButton.setBounds(154, 350, 115, 23);
 
         ITEMCODEBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         addqtypage.add(ITEMCODEBox);
@@ -1454,6 +1459,13 @@ public class maingui extends javax.swing.JFrame {
         MINIMUMSpinner.setValue(0);
     }//GEN-LAST:event_CREATENEWITEMButtonActionPerformed
 
+    private void ITEMADDQTYButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ITEMADDQTYButtonActionPerformed
+        // TODO add your handling code here:
+        Integer qty = (Integer)ITEMQTYSpinner.getValue();
+        String code = ITEMCODEBox.getItemAt(0);
+        
+    }//GEN-LAST:event_ITEMADDQTYButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1492,10 +1504,12 @@ public class maingui extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton CREATENEWITEMButton;
     private javax.swing.JPanel Homesidepanel;
+    private javax.swing.JToggleButton ITEMADDQTYButton;
     private javax.swing.JComboBox<String> ITEMCODEBox;
     private javax.swing.JTextField ITEMCODETextField;
     private java.awt.List ITEMLISTField;
     private javax.swing.JTextField ITEMNAMETextField;
+    private javax.swing.JSpinner ITEMQTYSpinner;
     private javax.swing.JPasswordField LOGINPASSWORDJPasswordField;
     private javax.swing.JTextField LOGINUSERIDTextField;
     private javax.swing.JPanel Loginpage;
@@ -1569,13 +1583,11 @@ public class maingui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JSpinner jSpinner4;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
-    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JToggleButton jToggleButton4;
     private javax.swing.JToggleButton jToggleButton5;

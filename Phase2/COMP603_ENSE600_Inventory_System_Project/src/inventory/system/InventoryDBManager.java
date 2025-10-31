@@ -15,7 +15,7 @@ import java.util.Map;           //For inventory handling
 public class InventoryDBManager {
 
     public static Connection conn;
-    public static String url = "jdbc:derby://localhost:1527/InventoryDataBase";
+    public static String url = "jdbc:derby:InventoryDataBase_Ebd;create=true";
     private static String username = "COMP603";
     private static String password = "COMP603";
 
@@ -49,18 +49,18 @@ public class InventoryDBManager {
     public Map<String, Item> LoadInventoryTable() {
     Map<String, Item> map = new HashMap<>();
 
-    String query = "SELECT ITEMCODE, ITEMNAME, QTY, MOQ, STKMIN, PRICE FROM INVENTORY";
+    String query = "SELECT CODE, NAME, QTY, MOQ, STK_MIN, PRICE FROM INVENTORY";
 
     try (Connection conn = DriverManager.getConnection(url, username, password);
          Statement stmt = conn.createStatement();
          ResultSet rs = stmt.executeQuery(query);) {
 
         while (rs.next()) {
-            String code = rs.getString("ITEMCODE");
-            String name = rs.getString("ITEMNAME");
+            String code = rs.getString("CODE");
+            String name = rs.getString("NAME");
             int qty = rs.getInt("QTY");
             int moq = rs.getInt("MOQ");
-            int stkMin = rs.getInt("STKMIN");
+            int stkMin = rs.getInt("STK_MIN");
             double price = rs.getDouble("PRICE");
 
             // Create the item and add it to the map
