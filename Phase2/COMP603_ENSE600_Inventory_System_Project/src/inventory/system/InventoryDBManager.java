@@ -9,7 +9,7 @@ import java.sql.SQLException;   //Exceptions
 import java.util.HashMap;
 import java.util.Map;           //For inventory handling
 
-//Inventory Database URL: jdbc:derby://localhost:1527/InventoryDB
+//Inventory Database URL: jdbc:derby://localhost:1527/InventoryDB - Old version no-longer being used.
 //Database Username: COMP603
 //Database Password: COMP603
 public class InventoryDBManager {
@@ -45,41 +45,62 @@ public class InventoryDBManager {
         }
     }
 
-    
-    public Map<String, Item> LoadInventoryTable() {
-    Map<String, Item> map = new HashMap<>();
+    public Map<String, Security> LoadSecurityTable() {
+        Map<String, Security> map = new HashMap<>();
 
-    String query = "SELECT CODE, NAME, QTY, MOQ, STK_MIN, PRICE FROM INVENTORY";
+        String query = "SELECT USERNAME, NAME, PASSWORD, STATUS FROM SECURITY";
 
-    try (Connection conn = DriverManager.getConnection(url, username, password);
-         Statement stmt = conn.createStatement();
-         ResultSet rs = stmt.executeQuery(query);) {
+        try (Connection conn = DriverManager.getConnection(url, username, password); Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(query);) {
 
-        while (rs.next()) {
-            String code = rs.getString("CODE");
-            String name = rs.getString("NAME");
-            int qty = rs.getInt("QTY");
-            int moq = rs.getInt("MOQ");
-            int stkMin = rs.getInt("STK_MIN");
-            double price = rs.getDouble("PRICE");
+            while (rs.next()) {
+                String uid = rs.getString("USERNAME");
+                String name = rs.getString("NAME");
+                String password = rs.getString("PASSWORD");
+                String status = rs.getString("STATUS");
 
-            // Create the item and add it to the map
-            Item item = new Item(code, name, qty, moq, stkMin, price);
-            map.put(code, item);
+                // Create the item and add it to the map
+                Security sec = new Security(name, uid, password, status);
+                map.put(uid, sec);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
-    } catch (SQLException e) {
-        e.printStackTrace();
+        return map;
     }
 
-    return map;
-}
+    public Map<String, Item> LoadInventoryTable() {
+        Map<String, Item> map = new HashMap<>();
 
-    
+        String query = "SELECT CODE, NAME, QTY, MOQ, STK_MIN, PRICE FROM INVENTORY";
+
+        try (Connection conn = DriverManager.getConnection(url, username, password); Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(query);) {
+
+            while (rs.next()) {
+                String code = rs.getString("CODE");
+                String name = rs.getString("NAME");
+                int qty = rs.getInt("QTY");
+                int moq = rs.getInt("MOQ");
+                int stkMin = rs.getInt("STK_MIN");
+                double price = rs.getDouble("PRICE");
+
+                // Create the item and add it to the map
+                Item item = new Item(code, name, qty, moq, stkMin, price);
+                map.put(code, item);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return map;
+    }
+
     /*
     This Database Method establishes an update to a preexisting Database table Called INVENTORY,
     if an item does not exist make a new item
-    */
+     */
     public void UpdateInventoryTable(Map<String, Item> inventory) {
         String createTable = "CREATE TABLE Inventory (ID INT, "
                 + "CODE VARCHAR(50), "
@@ -136,7 +157,7 @@ public class InventoryDBManager {
     /*
     This Database Method will display and currently updated orderrequest table which
     will update the database table by removing any item that doesnt meet the requirements for new orders
-    */
+     */
     public void InsertIntoOrderRequestTable(Map<String, Item> inventory) {
         try {
             conn = getConnection();
@@ -162,11 +183,12 @@ public class InventoryDBManager {
             System.err.println("SQLException: " + ex.getMessage());
         }
     }
+
     /*
     This method will establish a security table for usernames and passwords for 
     users who want to use the GUI application which is first run through a registration
     it will also check if there a currently registered user in the database.
-    */
+     */
     public void UpdateSecurityTable(Map<String, Security> security) {
         String createTable = "CREATE TABLE Security (ID INT, "
                 + "USERNAME VARCHAR(50),"

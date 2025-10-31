@@ -1247,6 +1247,9 @@ public class maingui extends javax.swing.JFrame {
 
     private void loginloginpagebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginloginpagebuttonActionPerformed
         // TODO add your handling code here:
+        InventoryDBManager i = new InventoryDBManager();
+        userMap = i.LoadSecurityTable();
+        
         String uid = LOGINUSERIDTextField.getText();
         String password = new String(LOGINPASSWORDJPasswordField.getPassword());
         int logincounter = 0;
@@ -1280,15 +1283,18 @@ public class maingui extends javax.swing.JFrame {
     private void registerregistrationpagebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerregistrationpagebuttonActionPerformed
         // TODO add your handling code here:
         try {
-            String name = RegisterNameTextField.getText();
+            InventoryDBManager i = new InventoryDBManager();
+            userMap = i.LoadSecurityTable(); //update hashmap with existing users
             String uid = RegisterUIDTextField.getText();
+            if(userMap.containsKey(uid)){throw new Exception("Current Username Already Exists!");}
+            
+            String name = RegisterNameTextField.getText();
             String password = new String(RegisterPasswordField.getPassword());
             String confirmPassword = new String(RegisterPasswordConfirmField.getPassword());
             if (!confirmPassword.equals(password)) {
                 throw new Exception("Password does not match.");
             }
             userMap.put(uid, new Security(name, uid, password));
-            InventoryDBManager i = new InventoryDBManager();
             i.UpdateSecurityTable(userMap);
 
             RegisterNameTextField.setText("");
@@ -1367,6 +1373,9 @@ public class maingui extends javax.swing.JFrame {
     }//GEN-LAST:event_orderrequesthomepagebuttonActionPerformed
 
     private void addqtyaddoptionspageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addqtyaddoptionspageActionPerformed
+        
+        InventoryDBManager i = new InventoryDBManager();
+        inventoryMap = i.LoadInventoryTable();
         
         ITEMCODEBox.removeAllItems();//clears selection box
         ITEMLISTField.removeAll();//whenever there is a new run of the text field it will empty.
