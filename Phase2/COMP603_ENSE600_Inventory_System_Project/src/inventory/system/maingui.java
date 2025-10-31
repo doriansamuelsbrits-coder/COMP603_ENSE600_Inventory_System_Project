@@ -112,12 +112,12 @@ public class maingui extends javax.swing.JFrame {
         removeitemremoveoptionspagebutton = new javax.swing.JToggleButton();
         jLabel29 = new javax.swing.JLabel();
         removeqtypage = new javax.swing.JPanel();
-        jSpinner4 = new javax.swing.JSpinner();
-        list3 = new java.awt.List();
+        REMOVEITEMQTYSpinner = new javax.swing.JSpinner();
+        REMOVEITEMList = new java.awt.List();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        jToggleButton4 = new javax.swing.JToggleButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        REMOVEQTYButton = new javax.swing.JToggleButton();
+        REMOVEITEMQTYBox = new javax.swing.JComboBox<>();
         jLabel35 = new javax.swing.JLabel();
         removeitempage = new javax.swing.JPanel();
         list4 = new java.awt.List();
@@ -863,10 +863,10 @@ public class maingui extends javax.swing.JFrame {
         Parent.add(removeoptionspage, "card8");
 
         removeqtypage.setLayout(null);
-        removeqtypage.add(jSpinner4);
-        jSpinner4.setBounds(376, 305, 64, 22);
-        removeqtypage.add(list3);
-        list3.setBounds(40, 38, 400, 239);
+        removeqtypage.add(REMOVEITEMQTYSpinner);
+        REMOVEITEMQTYSpinner.setBounds(376, 305, 64, 22);
+        removeqtypage.add(REMOVEITEMList);
+        REMOVEITEMList.setBounds(40, 38, 400, 239);
 
         jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
@@ -880,13 +880,18 @@ public class maingui extends javax.swing.JFrame {
         removeqtypage.add(jLabel21);
         jLabel21.setBounds(284, 308, 70, 16);
 
-        jToggleButton4.setText("REMOVE QUANTITY");
-        removeqtypage.add(jToggleButton4);
-        jToggleButton4.setBounds(170, 345, 136, 23);
+        REMOVEQTYButton.setText("REMOVE QUANTITY");
+        REMOVEQTYButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                REMOVEQTYButtonActionPerformed(evt);
+            }
+        });
+        removeqtypage.add(REMOVEQTYButton);
+        REMOVEQTYButton.setBounds(170, 345, 136, 23);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        removeqtypage.add(jComboBox1);
-        jComboBox1.setBounds(119, 305, 95, 22);
+        REMOVEITEMQTYBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        removeqtypage.add(REMOVEITEMQTYBox);
+        REMOVEITEMQTYBox.setBounds(119, 305, 95, 22);
         removeqtypage.add(jLabel35);
         jLabel35.setBounds(0, 0, 480, 400);
 
@@ -1249,7 +1254,7 @@ public class maingui extends javax.swing.JFrame {
         // TODO add your handling code here:
         InventoryDBManager i = new InventoryDBManager();
         userMap = i.LoadSecurityTable();
-        
+
         String uid = LOGINUSERIDTextField.getText();
         String password = new String(LOGINPASSWORDJPasswordField.getPassword());
         int logincounter = 0;
@@ -1286,8 +1291,10 @@ public class maingui extends javax.swing.JFrame {
             InventoryDBManager i = new InventoryDBManager();
             userMap = i.LoadSecurityTable(); //update hashmap with existing users
             String uid = RegisterUIDTextField.getText();
-            if(userMap.containsKey(uid)){throw new Exception("Current Username Already Exists!");}
-            
+            if (userMap.containsKey(uid)) {
+                throw new Exception("Current Username Already Exists!");
+            }
+
             String name = RegisterNameTextField.getText();
             String password = new String(RegisterPasswordField.getPassword());
             String confirmPassword = new String(RegisterPasswordConfirmField.getPassword());
@@ -1360,7 +1367,7 @@ public class maingui extends javax.swing.JFrame {
     }//GEN-LAST:event_inventorystatushomepagebuttonActionPerformed
 
     private void orderrequesthomepagebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderrequesthomepagebuttonActionPerformed
-    
+
         //ORDERREQUESTList.add()...
         // TODO add your handling code here:
         sidepanel.removeAll();
@@ -1373,26 +1380,28 @@ public class maingui extends javax.swing.JFrame {
         Parent.repaint();
         Parent.revalidate();
     }//GEN-LAST:event_orderrequesthomepagebuttonActionPerformed
-
-    private void addqtyaddoptionspageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addqtyaddoptionspageActionPerformed
-        
-        InventoryDBManager i = new InventoryDBManager();
-        inventoryMap = i.LoadInventoryTable();
-        
+    public void loadAddItemList() {
         ITEMCODEBox.removeAllItems();//clears selection box
         ITEMLISTField.removeAll();//whenever there is a new run of the text field it will empty.
-        ITEMLISTField.add(String.format("%-10s | %-12s | %-5s | %-5s | %-8s | %-8s%n","Item Code", "Item Name", "Qty", "MOQ", "Stk Min", "Price"));
+        ITEMLISTField.add(String.format("%-10s | %-12s | %-5s | %-5s | %-8s | %-8s%n", "Item Code", "Item Name", "Qty", "MOQ", "Stk Min", "Price"));
         ITEMLISTField.add("-----------------------------------------------------------------------------");
-        for(Map.Entry<String, Item> entry: inventoryMap.entrySet())
-        {
+        for (Map.Entry<String, Item> entry : inventoryMap.entrySet()) {
             String key = entry.getKey();
             Item item = entry.getValue();
-            
+
             String line = String.format("%-10s | %-12s | %-5d | %-5d | %-8d | %-8.2f%n", item.itemCode, item.itemName, item.qty, item.moq, item.stkMin, item.price);
             ITEMLISTField.add(line);
-            
+
             ITEMCODEBox.addItem(item.itemCode);
         }
+
+    }
+    private void addqtyaddoptionspageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addqtyaddoptionspageActionPerformed
+
+        InventoryDBManager i = new InventoryDBManager();
+        inventoryMap = i.LoadInventoryTable();
+
+        loadAddItemList();
 
         // TODO add your handling code here:
         sidepanel.removeAll();
@@ -1450,18 +1459,18 @@ public class maingui extends javax.swing.JFrame {
         String code = ITEMCODETextField.getText();
         String name = ITEMNAMETextField.getText();
         String supplier = SUPPLIERTextField.getText();
-        Integer moq = (Integer)MOQSpinner.getValue();
+        Integer moq = (Integer) MOQSpinner.getValue();
         Double price = Double.parseDouble(PRICETextField.getText()); // needs to be converted to a double
-        Integer min = (Integer)MINIMUMSpinner.getValue();
-        
+        Integer min = (Integer) MINIMUMSpinner.getValue();
+
         //Item(String itemCode, String itemName, int qty, int moq, int stkMin, double price)
-        inventoryMap.put(code, new Item(code,name,1, moq, min, price));
+        inventoryMap.put(code, new Item(code, name, 1, moq, min, price));
         InventoryDBManager i = new InventoryDBManager();
         i.UpdateInventoryTable(inventoryMap);
         inventoryMap = i.LoadInventoryTable();
-        
+
         JOptionPane.showMessageDialog(this, "Item Registered Successfully!");
-        
+
         ITEMCODETextField.setText("");
         ITEMNAMETextField.setText("");
         SUPPLIERTextField.setText("");
@@ -1472,10 +1481,58 @@ public class maingui extends javax.swing.JFrame {
 
     private void ITEMADDQTYButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ITEMADDQTYButtonActionPerformed
         // TODO add your handling code here:
-        Integer qty = (Integer)ITEMQTYSpinner.getValue();
-        String code = ITEMCODEBox.getItemAt(0);
-        
+        InventoryDBManager i = new InventoryDBManager();
+        inventoryMap = i.LoadInventoryTable(); //load hashmap before modifying qty
+        Integer qty = (Integer) ITEMQTYSpinner.getValue();
+        String code = (String) ITEMCODEBox.getSelectedItem();
+
+        if (code == null || code.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please select an item code.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        if (qty <= 0) {
+            JOptionPane.showMessageDialog(this, "Please enter a quantity greater than zero.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+        Item item = inventoryMap.get(code);
+        if (item == null) {
+            JOptionPane.showMessageDialog(this, "Item not found in memory map.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        item.qty += qty;
+        inventoryMap.put(code, item);
+        i.UpdateInventoryTable(inventoryMap);
+        i.LoadInventoryTable(); //Reload table
+        loadAddItemList();
+
     }//GEN-LAST:event_ITEMADDQTYButtonActionPerformed
+
+    private void REMOVEQTYButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_REMOVEQTYButtonActionPerformed
+        InventoryDBManager i = new InventoryDBManager();
+        inventoryMap = i.LoadInventoryTable(); //load hashmap before modifying qty
+        Integer qty = (Integer) REMOVEITEMQTYSpinner.getValue();
+        String code = (String) REMOVEITEMQTYBox.getSelectedItem();
+
+        if (code == null || code.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please select an item code.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        if (qty <= 0) {
+            JOptionPane.showMessageDialog(this, "Please enter a quantity greater than zero.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+        Item item = inventoryMap.get(code);
+        if (item == null) {
+            JOptionPane.showMessageDialog(this, "Item not found in memory map.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+        if (!(item.qty - qty >= 0))
+        {
+            JOptionPane.showMessageDialog(this, "Item QTY cannot be Negative, Purchase more Item Name: " + item.itemName, " Error", JOptionPane.ERROR_MESSAGE);
+        }
+        else{item.qty -= qty;}
+        
+        inventoryMap.put(code, item);
+        i.UpdateInventoryTable(inventoryMap);
+        loadAddItemList();
+    }//GEN-LAST:event_REMOVEQTYButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1534,6 +1591,10 @@ public class maingui extends javax.swing.JFrame {
     private java.awt.List ORDERREQUESTList;
     private javax.swing.JTextField PRICETextField;
     private javax.swing.JPanel Parent;
+    private java.awt.List REMOVEITEMList;
+    private javax.swing.JComboBox<String> REMOVEITEMQTYBox;
+    private javax.swing.JSpinner REMOVEITEMQTYSpinner;
+    private javax.swing.JToggleButton REMOVEQTYButton;
     private javax.swing.JTextField RegisterNameTextField;
     private javax.swing.JPasswordField RegisterPasswordConfirmField;
     private javax.swing.JPasswordField RegisterPasswordField;
@@ -1558,7 +1619,6 @@ public class maingui extends javax.swing.JFrame {
     private javax.swing.JPanel inventorypage;
     private javax.swing.JPanel inventorysidepanel;
     private javax.swing.JToggleButton inventorystatushomepagebutton;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1595,18 +1655,15 @@ public class maingui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JSpinner jSpinner4;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
     private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
     private javax.swing.JToggleButton jToggleButton5;
     private javax.swing.JToggleButton jToggleButton6;
     private javax.swing.JToggleButton jToggleButton7;
     private java.awt.List list2;
-    private java.awt.List list3;
     private java.awt.List list4;
     private java.awt.List list5;
     private javax.swing.JToggleButton loginloginpagebutton;
