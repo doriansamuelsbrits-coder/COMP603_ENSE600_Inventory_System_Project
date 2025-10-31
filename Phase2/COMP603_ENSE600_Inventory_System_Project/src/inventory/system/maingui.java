@@ -139,7 +139,7 @@ public class maingui extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         orderpage = new javax.swing.JPanel();
-        list6 = new java.awt.List();
+        ORDERREQUESTList = new java.awt.List();
         jToggleButton7 = new javax.swing.JToggleButton();
         jLabel31 = new javax.swing.JLabel();
 
@@ -981,8 +981,8 @@ public class maingui extends javax.swing.JFrame {
         Parent.add(inventorypage, "card11");
 
         orderpage.setLayout(null);
-        orderpage.add(list6);
-        list6.setBounds(45, 36, 386, 245);
+        orderpage.add(ORDERREQUESTList);
+        ORDERREQUESTList.setBounds(45, 36, 386, 245);
 
         jToggleButton7.setText("GENERATE ORDER REQUEST DOCUMENT");
         orderpage.add(jToggleButton7);
@@ -1360,6 +1360,8 @@ public class maingui extends javax.swing.JFrame {
     }//GEN-LAST:event_inventorystatushomepagebuttonActionPerformed
 
     private void orderrequesthomepagebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderrequesthomepagebuttonActionPerformed
+    
+        //ORDERREQUESTList.add()...
         // TODO add your handling code here:
         sidepanel.removeAll();
         sidepanel.add(ordersidepanel);
@@ -1529,6 +1531,7 @@ public class maingui extends javax.swing.JFrame {
     private javax.swing.JToggleButton Logoutordersidepanelbutton;
     private javax.swing.JSpinner MINIMUMSpinner;
     private javax.swing.JSpinner MOQSpinner;
+    private java.awt.List ORDERREQUESTList;
     private javax.swing.JTextField PRICETextField;
     private javax.swing.JPanel Parent;
     private javax.swing.JTextField RegisterNameTextField;
@@ -1606,7 +1609,6 @@ public class maingui extends javax.swing.JFrame {
     private java.awt.List list3;
     private java.awt.List list4;
     private java.awt.List list5;
-    private java.awt.List list6;
     private javax.swing.JToggleButton loginloginpagebutton;
     private javax.swing.JToggleButton loginsidepanelbutton1;
     private javax.swing.JPanel optionssidepanel;
