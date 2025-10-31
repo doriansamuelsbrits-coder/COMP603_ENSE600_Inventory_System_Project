@@ -4,7 +4,9 @@ import java.sql.Connection;     //database connection service
 import java.sql.DriverManager;  //Existing table removal
 import java.sql.Statement;      //Statement Generation for tables
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;   //Exceptions
+import java.util.HashMap;
 import java.util.Map;           //For inventory handling
 
 //Inventory Database URL: jdbc:derby://localhost:1527/InventoryDB
@@ -43,6 +45,37 @@ public class InventoryDBManager {
         }
     }
 
+    
+    public Map<String, Item> LoadInventoryTable() {
+    Map<String, Item> map = new HashMap<>();
+
+    String query = "SELECT ITEMCODE, ITEMNAME, QTY, MOQ, STKMIN, PRICE FROM INVENTORY";
+
+    try (Connection conn = DriverManager.getConnection(url, username, password);
+         Statement stmt = conn.createStatement();
+         ResultSet rs = stmt.executeQuery(query);) {
+
+        while (rs.next()) {
+            String code = rs.getString("ITEMCODE");
+            String name = rs.getString("ITEMNAME");
+            int qty = rs.getInt("QTY");
+            int moq = rs.getInt("MOQ");
+            int stkMin = rs.getInt("STKMIN");
+            double price = rs.getDouble("PRICE");
+
+            // Create the item and add it to the map
+            Item item = new Item(code, name, qty, moq, stkMin, price);
+            map.put(code, item);
+        }
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+    return map;
+}
+
+    
     /*
     This Database Method establishes an update to a preexisting Database table Called INVENTORY,
     if an item does not exist make a new item
@@ -117,8 +150,8 @@ public class InventoryDBManager {
                 System.out.println("Table " + table + "does not exist.");
             }
 
-            String createTable = "CREATE TABLE " + table + "(ID INT, "
-                    + "CODE VARCHAR(50), "
+            String createTable = "CREATE TABLE " + table
+                    + "(CODE VARCHAR(50), "
                     + "NAME VARCHAR(50), "
                     + "QTY INT, MOQ INT, "
                     + "STK_MIN INT, "

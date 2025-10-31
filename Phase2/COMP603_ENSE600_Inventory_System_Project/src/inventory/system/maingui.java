@@ -1,17 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 
-/**
- *
- * @author kanth
- */
+import inventory.system.InventoryDBManager;
+import inventory.system.InventorySystem;
+import inventory.system.Item;
+import inventory.system.Security;
+import java.util.Map;
+import javax.swing.JOptionPane;
+
 public class maingui extends javax.swing.JFrame {
 
-    /**
-     * Creates new form maingui
-     */
+    private Map<String, Security> userMap = InventorySystem.getSecurityMap();
+    private Map<String, Item> inventoryMap = InventorySystem.getHashMap();
+
     public maingui() {
         initComponents();
     }
@@ -59,20 +58,20 @@ public class maingui extends javax.swing.JFrame {
         inventoryordersidepanelbutton = new javax.swing.JToggleButton();
         Parent = new javax.swing.JPanel();
         Loginpage = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        LOGINUSERIDTextField = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        LOGINPASSWORDJPasswordField = new javax.swing.JPasswordField();
         loginloginpagebutton = new javax.swing.JToggleButton();
         jLabel7 = new javax.swing.JLabel();
         registrationpage = new javax.swing.JPanel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        RegisterNameTextField = new javax.swing.JTextField();
+        RegisterUIDTextField = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jPasswordField2 = new javax.swing.JPasswordField();
+        RegisterPasswordField = new javax.swing.JPasswordField();
         jLabel11 = new javax.swing.JLabel();
-        jPasswordField3 = new javax.swing.JPasswordField();
+        RegisterPasswordConfirmField = new javax.swing.JPasswordField();
         registerregistrationpagebutton = new javax.swing.JToggleButton();
         homepage = new javax.swing.JPanel();
         removeitemhomepagebutton = new javax.swing.JToggleButton();
@@ -85,21 +84,21 @@ public class maingui extends javax.swing.JFrame {
         additemaddoptionspage = new javax.swing.JToggleButton();
         jLabel28 = new javax.swing.JLabel();
         addqtypage = new javax.swing.JPanel();
-        list1 = new java.awt.List();
+        ITEMLISTField = new java.awt.List();
         jSpinner1 = new javax.swing.JSpinner();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jToggleButton1 = new javax.swing.JToggleButton();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        ITEMCODEBox = new javax.swing.JComboBox<>();
         jLabel33 = new javax.swing.JLabel();
         additempage = new javax.swing.JPanel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jSpinner2 = new javax.swing.JSpinner();
-        jTextField8 = new javax.swing.JTextField();
-        jSpinner3 = new javax.swing.JSpinner();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        ITEMCODETextField = new javax.swing.JTextField();
+        ITEMNAMETextField = new javax.swing.JTextField();
+        SUPPLIERTextField = new javax.swing.JTextField();
+        MOQSpinner = new javax.swing.JSpinner();
+        PRICETextField = new javax.swing.JTextField();
+        MINIMUMSpinner = new javax.swing.JSpinner();
+        CREATENEWITEMButton = new javax.swing.JToggleButton();
         jToggleButton3 = new javax.swing.JToggleButton();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -530,11 +529,11 @@ public class maingui extends javax.swing.JFrame {
 
         Parent.setLayout(new java.awt.CardLayout());
 
-        jTextField1.setText("jTextField1");
+        LOGINUSERIDTextField.setText("jTextField1");
 
         jLabel6.setText("USER ID");
 
-        jPasswordField1.setText("jPasswordField1");
+        LOGINPASSWORDJPasswordField.setText("jPasswordField1");
 
         loginloginpagebutton.setBackground(new java.awt.Color(102, 255, 102));
         loginloginpagebutton.setText("Login");
@@ -558,8 +557,8 @@ public class maingui extends javax.swing.JFrame {
                     .addGroup(LoginpageLayout.createSequentialGroup()
                         .addGap(124, 124, 124)
                         .addGroup(LoginpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)))
+                            .addComponent(LOGINUSERIDTextField)
+                            .addComponent(LOGINPASSWORDJPasswordField, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)))
                     .addGroup(LoginpageLayout.createSequentialGroup()
                         .addGap(159, 159, 159)
                         .addComponent(loginloginpagebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -574,11 +573,11 @@ public class maingui extends javax.swing.JFrame {
                 .addGap(100, 100, 100)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(LOGINUSERIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(LOGINPASSWORDJPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(loginloginpagebutton)
                 .addContainerGap(146, Short.MAX_VALUE))
@@ -586,9 +585,9 @@ public class maingui extends javax.swing.JFrame {
 
         Parent.add(Loginpage, "card2");
 
-        jTextField2.setText("jTextField2");
+        RegisterNameTextField.setText("jTextField2");
 
-        jTextField3.setText("jTextField3");
+        RegisterUIDTextField.setText("jTextField3");
 
         jLabel8.setText("NAME");
 
@@ -596,11 +595,11 @@ public class maingui extends javax.swing.JFrame {
 
         jLabel10.setText("PASSWORD");
 
-        jPasswordField2.setText("jPasswordField2");
+        RegisterPasswordField.setText("jPasswordField2");
 
         jLabel11.setText("RE-TYPE PASSWORD");
 
-        jPasswordField3.setText("jPasswordField3");
+        RegisterPasswordConfirmField.setText("jPasswordField3");
 
         registerregistrationpagebutton.setText("Register");
         registerregistrationpagebutton.addActionListener(new java.awt.event.ActionListener() {
@@ -624,10 +623,10 @@ public class maingui extends javax.swing.JFrame {
             .addGroup(registrationpageLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(registrationpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField2)
-                    .addComponent(jTextField3)
-                    .addComponent(jPasswordField2, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
-                    .addComponent(jPasswordField3))
+                    .addComponent(RegisterNameTextField)
+                    .addComponent(RegisterUIDTextField)
+                    .addComponent(RegisterPasswordField, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
+                    .addComponent(RegisterPasswordConfirmField))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registrationpageLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -648,19 +647,19 @@ public class maingui extends javax.swing.JFrame {
                 .addGap(59, 59, 59)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RegisterNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RegisterUIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RegisterPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RegisterPasswordConfirmField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(registerregistrationpagebutton)
                 .addContainerGap(56, Short.MAX_VALUE))
@@ -705,8 +704,6 @@ public class maingui extends javax.swing.JFrame {
         });
         homepage.add(orderrequesthomepagebutton);
         orderrequesthomepagebutton.setBounds(258, 209, 177, 125);
-
-        jLabel27.setIcon(new javax.swing.ImageIcon("C:\\Users\\kanth\\Downloads\\Sublime Vivid.jpg")); // NOI18N
         homepage.add(jLabel27);
         jLabel27.setBounds(0, 0, 480, 400);
 
@@ -731,16 +728,14 @@ public class maingui extends javax.swing.JFrame {
         });
         addoptionspage.add(additemaddoptionspage);
         additemaddoptionspage.setBounds(248, 141, 170, 110);
-
-        jLabel28.setIcon(new javax.swing.ImageIcon("C:\\Users\\kanth\\Downloads\\Sublime Vivid.jpg")); // NOI18N
         addoptionspage.add(jLabel28);
         jLabel28.setBounds(0, 0, 480, 400);
 
         Parent.add(addoptionspage, "card5");
 
         addqtypage.setLayout(null);
-        addqtypage.add(list1);
-        list1.setBounds(39, 50, 400, 239);
+        addqtypage.add(ITEMLISTField);
+        ITEMLISTField.setBounds(39, 50, 400, 239);
         addqtypage.add(jSpinner1);
         jSpinner1.setBounds(350, 310, 64, 22);
 
@@ -748,7 +743,7 @@ public class maingui extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("ITEM CODE");
         addqtypage.add(jLabel12);
-        jLabel12.setBounds(40, 310, 62, 16);
+        jLabel12.setBounds(40, 310, 65, 16);
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
@@ -760,45 +755,43 @@ public class maingui extends javax.swing.JFrame {
         addqtypage.add(jToggleButton1);
         jToggleButton1.setBounds(154, 350, 115, 23);
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        addqtypage.add(jComboBox3);
-        jComboBox3.setBounds(120, 310, 88, 22);
-
-        jLabel33.setIcon(new javax.swing.ImageIcon("C:\\Users\\kanth\\Downloads\\Sublime Vivid.jpg")); // NOI18N
+        ITEMCODEBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        addqtypage.add(ITEMCODEBox);
+        ITEMCODEBox.setBounds(120, 310, 88, 22);
         addqtypage.add(jLabel33);
         jLabel33.setBounds(0, 0, 480, 400);
 
         Parent.add(addqtypage, "card6");
 
         additempage.setLayout(null);
+        additempage.add(ITEMCODETextField);
+        ITEMCODETextField.setBounds(302, 56, 108, 22);
+        additempage.add(ITEMNAMETextField);
+        ITEMNAMETextField.setBounds(302, 90, 108, 22);
+        additempage.add(SUPPLIERTextField);
+        SUPPLIERTextField.setBounds(302, 130, 108, 22);
+        additempage.add(MOQSpinner);
+        MOQSpinner.setBounds(346, 170, 64, 22);
 
-        jTextField5.setText("jTextField5");
-        additempage.add(jTextField5);
-        jTextField5.setBounds(302, 56, 108, 22);
+        PRICETextField.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        PRICETextField.setText("0.00");
+        additempage.add(PRICETextField);
+        PRICETextField.setBounds(302, 210, 108, 22);
+        additempage.add(MINIMUMSpinner);
+        MINIMUMSpinner.setBounds(346, 250, 64, 22);
 
-        jTextField6.setText("jTextField6");
-        additempage.add(jTextField6);
-        jTextField6.setBounds(302, 90, 108, 22);
-
-        jTextField7.setText("jTextField7");
-        additempage.add(jTextField7);
-        jTextField7.setBounds(302, 130, 108, 22);
-        additempage.add(jSpinner2);
-        jSpinner2.setBounds(346, 170, 64, 22);
-
-        jTextField8.setText("jTextField8");
-        additempage.add(jTextField8);
-        jTextField8.setBounds(302, 210, 108, 22);
-        additempage.add(jSpinner3);
-        jSpinner3.setBounds(346, 250, 64, 22);
-
-        jToggleButton2.setText("CREATE");
-        additempage.add(jToggleButton2);
-        jToggleButton2.setBounds(86, 341, 72, 23);
+        CREATENEWITEMButton.setText("CREATE");
+        CREATENEWITEMButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CREATENEWITEMButtonActionPerformed(evt);
+            }
+        });
+        additempage.add(CREATENEWITEMButton);
+        CREATENEWITEMButton.setBounds(86, 341, 71, 23);
 
         jToggleButton3.setText("REFRESH");
         additempage.add(jToggleButton3);
-        jToggleButton3.setBounds(302, 341, 77, 23);
+        jToggleButton3.setBounds(302, 341, 78, 23);
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
@@ -810,33 +803,31 @@ public class maingui extends javax.swing.JFrame {
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("ITEM NAME");
         additempage.add(jLabel15);
-        jLabel15.setBounds(67, 93, 65, 16);
+        jLabel15.setBounds(67, 93, 69, 16);
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("SUPPLIER");
         additempage.add(jLabel16);
-        jLabel16.setBounds(67, 133, 54, 16);
+        jLabel16.setBounds(67, 133, 55, 16);
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("MINIMUM ORDER QUANTITY");
         additempage.add(jLabel17);
-        jLabel17.setBounds(67, 173, 165, 16);
+        jLabel17.setBounds(67, 173, 169, 16);
 
         jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("PRICE");
         additempage.add(jLabel18);
-        jLabel18.setBounds(67, 213, 32, 16);
+        jLabel18.setBounds(67, 213, 33, 16);
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("MINIMUM QUANTITY");
         additempage.add(jLabel19);
-        jLabel19.setBounds(67, 253, 122, 16);
-
-        jLabel34.setIcon(new javax.swing.ImageIcon("C:\\Users\\kanth\\Downloads\\Sublime Vivid.jpg")); // NOI18N
+        jLabel19.setBounds(67, 253, 125, 16);
         additempage.add(jLabel34);
         jLabel34.setBounds(0, 0, 480, 400);
 
@@ -861,8 +852,6 @@ public class maingui extends javax.swing.JFrame {
         });
         removeoptionspage.add(removeitemremoveoptionspagebutton);
         removeitemremoveoptionspagebutton.setBounds(255, 141, 170, 110);
-
-        jLabel29.setIcon(new javax.swing.ImageIcon("C:\\Users\\kanth\\Downloads\\Sublime Vivid.jpg")); // NOI18N
         removeoptionspage.add(jLabel29);
         jLabel29.setBounds(0, 0, 480, 400);
 
@@ -878,7 +867,7 @@ public class maingui extends javax.swing.JFrame {
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("ITEM CODE");
         removeqtypage.add(jLabel20);
-        jLabel20.setBounds(40, 308, 62, 16);
+        jLabel20.setBounds(40, 308, 65, 16);
 
         jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
@@ -888,13 +877,11 @@ public class maingui extends javax.swing.JFrame {
 
         jToggleButton4.setText("REMOVE QUANTITY");
         removeqtypage.add(jToggleButton4);
-        jToggleButton4.setBounds(170, 345, 137, 23);
+        jToggleButton4.setBounds(170, 345, 136, 23);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         removeqtypage.add(jComboBox1);
         jComboBox1.setBounds(119, 305, 95, 22);
-
-        jLabel35.setIcon(new javax.swing.ImageIcon("C:\\Users\\kanth\\Downloads\\Sublime Vivid.jpg")); // NOI18N
         removeqtypage.add(jLabel35);
         jLabel35.setBounds(0, 0, 480, 400);
 
@@ -917,8 +904,6 @@ public class maingui extends javax.swing.JFrame {
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         removeitempage.add(jComboBox2);
         jComboBox2.setBounds(218, 300, 120, 22);
-
-        jLabel32.setIcon(new javax.swing.ImageIcon("C:\\Users\\kanth\\Downloads\\Sublime Vivid.jpg")); // NOI18N
         removeitempage.add(jLabel32);
         jLabel32.setBounds(0, 0, 480, 400);
 
@@ -930,7 +915,7 @@ public class maingui extends javax.swing.JFrame {
 
         jToggleButton6.setText("GENERATE INVENTORY STATUS DOCUMENT");
         inventorypage.add(jToggleButton6);
-        jToggleButton6.setBounds(118, 346, 268, 23);
+        jToggleButton6.setBounds(118, 346, 265, 23);
 
         javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
         panel1.setLayout(panel1Layout);
@@ -972,21 +957,19 @@ public class maingui extends javax.swing.JFrame {
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
         jLabel24.setText("TOTAL QUANTITY");
         inventorypage.add(jLabel24);
-        jLabel24.setBounds(31, 51, 100, 16);
+        jLabel24.setBounds(31, 51, 104, 16);
 
         jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setText("BELOW MINIMUM STOCK");
         inventorypage.add(jLabel25);
-        jLabel25.setBounds(31, 79, 144, 16);
+        jLabel25.setBounds(31, 79, 147, 16);
 
         jLabel26.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
         jLabel26.setText("OUT OF STOCK");
         inventorypage.add(jLabel26);
-        jLabel26.setBounds(31, 107, 84, 16);
-
-        jLabel30.setIcon(new javax.swing.ImageIcon("C:\\Users\\kanth\\Downloads\\Sublime Vivid.jpg")); // NOI18N
+        jLabel26.setBounds(31, 107, 86, 16);
         inventorypage.add(jLabel30);
         jLabel30.setBounds(0, 0, 480, 400);
 
@@ -998,9 +981,7 @@ public class maingui extends javax.swing.JFrame {
 
         jToggleButton7.setText("GENERATE ORDER REQUEST DOCUMENT");
         orderpage.add(jToggleButton7);
-        jToggleButton7.setBounds(129, 321, 248, 23);
-
-        jLabel31.setIcon(new javax.swing.ImageIcon("C:\\Users\\kanth\\Downloads\\Sublime Vivid.jpg")); // NOI18N
+        jToggleButton7.setBounds(129, 321, 249, 23);
         orderpage.add(jLabel31);
         jLabel31.setBounds(0, 0, 480, 400);
 
@@ -1018,7 +999,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(Registrationsidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(registrationpage);
         Parent.repaint();
@@ -1031,7 +1012,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(Loginsidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(Loginpage);
         Parent.repaint();
@@ -1044,7 +1025,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(Loginsidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(Loginpage);
         Parent.repaint();
@@ -1057,7 +1038,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(Homesidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(homepage);
         Parent.repaint();
@@ -1070,7 +1051,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(addoptionspage);
         Parent.repaint();
@@ -1083,7 +1064,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(removeoptionspage);
         Parent.repaint();
@@ -1096,7 +1077,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(inventorysidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(inventorypage);
         Parent.repaint();
@@ -1109,7 +1090,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(ordersidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(orderpage);
         Parent.repaint();
@@ -1118,11 +1099,11 @@ public class maingui extends javax.swing.JFrame {
 
     private void LogoutoptionssidepanelbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutoptionssidepanelbuttonActionPerformed
         // TODO add your handling code here:
-         sidepanel.removeAll();
+        sidepanel.removeAll();
         sidepanel.add(Loginsidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(Loginpage);
         Parent.repaint();
@@ -1135,7 +1116,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(Homesidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(homepage);
         Parent.repaint();
@@ -1148,7 +1129,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(addoptionspage);
         Parent.repaint();
@@ -1161,7 +1142,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(removeoptionspage);
         Parent.repaint();
@@ -1174,7 +1155,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(ordersidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(orderpage);
         Parent.repaint();
@@ -1183,11 +1164,11 @@ public class maingui extends javax.swing.JFrame {
 
     private void Logoutinventorysidepanelbutton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Logoutinventorysidepanelbutton1ActionPerformed
         // TODO add your handling code here:
-          sidepanel.removeAll();
+        sidepanel.removeAll();
         sidepanel.add(Loginsidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(Loginpage);
         Parent.repaint();
@@ -1200,7 +1181,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(Homesidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(homepage);
         Parent.repaint();
@@ -1209,11 +1190,11 @@ public class maingui extends javax.swing.JFrame {
 
     private void additemordersidepanelbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_additemordersidepanelbuttonActionPerformed
         // TODO add your handling code here:
-         sidepanel.removeAll();
+        sidepanel.removeAll();
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(addoptionspage);
         Parent.repaint();
@@ -1222,11 +1203,11 @@ public class maingui extends javax.swing.JFrame {
 
     private void removeitemordersidepanelbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeitemordersidepanelbuttonActionPerformed
         // TODO add your handling code here:
-         sidepanel.removeAll();
+        sidepanel.removeAll();
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(removeoptionspage);
         Parent.repaint();
@@ -1239,7 +1220,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(inventorysidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(inventorypage);
         Parent.repaint();
@@ -1248,11 +1229,11 @@ public class maingui extends javax.swing.JFrame {
 
     private void LogoutordersidepanelbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutordersidepanelbuttonActionPerformed
         // TODO add your handling code here:
-         sidepanel.removeAll();
+        sidepanel.removeAll();
         sidepanel.add(Loginsidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(Loginpage);
         Parent.repaint();
@@ -1261,28 +1242,71 @@ public class maingui extends javax.swing.JFrame {
 
     private void loginloginpagebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginloginpagebuttonActionPerformed
         // TODO add your handling code here:
-        sidepanel.removeAll();
-        sidepanel.add(Homesidepanel);
-        sidepanel.repaint();
-        sidepanel.revalidate();
-        
-        Parent.removeAll();
-        Parent.add(homepage);
-        Parent.repaint();
-        Parent.revalidate();
+        String uid = LOGINUSERIDTextField.getText();
+        String password = new String(LOGINPASSWORDJPasswordField.getPassword());
+        int logincounter = 0;
+
+        try {
+            if (userMap.containsKey(uid)) {
+                Security user = userMap.get(uid);
+                if (user.getPassword().equals(password)) {
+                    JOptionPane.showMessageDialog(this, "Login successful! Welcome " + user.getUserName());
+
+                    sidepanel.removeAll();
+                    sidepanel.add(Homesidepanel);
+                    sidepanel.repaint();
+                    sidepanel.revalidate();
+
+                    Parent.removeAll();
+                    Parent.add(homepage);
+                    Parent.repaint();
+                    Parent.revalidate();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Incorrect password.", "Login Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "User ID not found.", "Login Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error: " + e.getMessage(), "Registration Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_loginloginpagebuttonActionPerformed
 
     private void registerregistrationpagebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerregistrationpagebuttonActionPerformed
         // TODO add your handling code here:
-        sidepanel.removeAll();
-        sidepanel.add(Loginsidepanel);
-        sidepanel.repaint();
-        sidepanel.revalidate();
-        
-        Parent.removeAll();
-        Parent.add(Loginpage);
-        Parent.repaint();
-        Parent.revalidate();
+        try {
+            String name = RegisterNameTextField.getText();
+            String uid = RegisterUIDTextField.getText();
+            String password = new String(RegisterPasswordField.getPassword());
+            String confirmPassword = new String(RegisterPasswordConfirmField.getPassword());
+            if (!confirmPassword.equals(password)) {
+                throw new Exception("Password does not match.");
+            }
+            userMap.put(uid, new Security(name, uid, password));
+            InventoryDBManager i = new InventoryDBManager();
+            i.UpdateSecurityTable(userMap);
+
+            RegisterNameTextField.setText("");
+            RegisterUIDTextField.setText("");
+            RegisterPasswordField.setText("");
+            RegisterPasswordConfirmField.setText("");
+
+            JOptionPane.showMessageDialog(this, "User registered successfully!");
+
+            //switches back to the login panel.
+            sidepanel.removeAll();
+            sidepanel.add(Loginsidepanel);
+            sidepanel.repaint();
+            sidepanel.revalidate();
+
+            Parent.removeAll();
+            Parent.add(Loginpage);
+            Parent.repaint();
+            Parent.revalidate();
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error: " + e.getMessage(), "Registration Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_registerregistrationpagebuttonActionPerformed
 
     private void additemhomepagebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_additemhomepagebuttonActionPerformed
@@ -1291,7 +1315,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(addoptionspage);
         Parent.repaint();
@@ -1304,7 +1328,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(removeoptionspage);
         Parent.repaint();
@@ -1317,7 +1341,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(inventorysidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(inventorypage);
         Parent.repaint();
@@ -1330,7 +1354,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(ordersidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(orderpage);
         Parent.repaint();
@@ -1338,12 +1362,28 @@ public class maingui extends javax.swing.JFrame {
     }//GEN-LAST:event_orderrequesthomepagebuttonActionPerformed
 
     private void addqtyaddoptionspageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addqtyaddoptionspageActionPerformed
+        
+        ITEMCODEBox.removeAllItems();//clears selection box
+        ITEMLISTField.removeAll();//whenever there is a new run of the text field it will empty.
+        ITEMLISTField.add(String.format("%-10s | %-12s | %-5s | %-5s | %-8s | %-8s%n","Item Code", "Item Name", "Qty", "MOQ", "Stk Min", "Price"));
+        ITEMLISTField.add("-----------------------------------------------------------------------------");
+        for(Map.Entry<String, Item> entry: inventoryMap.entrySet())
+        {
+            String key = entry.getKey();
+            Item item = entry.getValue();
+            
+            String line = String.format("%-10s | %-12s | %-5d | %-5d | %-8d | %-8.2f%n", item.itemCode, item.itemName, item.qty, item.moq, item.stkMin, item.price);
+            ITEMLISTField.add(line);
+            
+            ITEMCODEBox.addItem(item.itemCode);
+        }
+
         // TODO add your handling code here:
         sidepanel.removeAll();
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(addqtypage);
         Parent.repaint();
@@ -1356,7 +1396,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(additempage);
         Parent.repaint();
@@ -1369,7 +1409,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(removeqtypage);
         Parent.repaint();
@@ -1382,12 +1422,37 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
         sidepanel.revalidate();
-        
+
         Parent.removeAll();
         Parent.add(removeitempage);
         Parent.repaint();
         Parent.revalidate();
     }//GEN-LAST:event_removeitemremoveoptionspagebuttonActionPerformed
+
+    private void CREATENEWITEMButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CREATENEWITEMButtonActionPerformed
+        // TODO add your handling code here:
+        String code = ITEMCODETextField.getText();
+        String name = ITEMNAMETextField.getText();
+        String supplier = SUPPLIERTextField.getText();
+        Integer moq = (Integer)MOQSpinner.getValue();
+        Double price = Double.parseDouble(PRICETextField.getText()); // needs to be converted to a double
+        Integer min = (Integer)MINIMUMSpinner.getValue();
+        
+        //Item(String itemCode, String itemName, int qty, int moq, int stkMin, double price)
+        inventoryMap.put(code, new Item(code,name,1, moq, min, price));
+        InventoryDBManager i = new InventoryDBManager();
+        i.UpdateInventoryTable(inventoryMap);
+        inventoryMap = i.LoadInventoryTable();
+        
+        JOptionPane.showMessageDialog(this, "Item Registered Successfully!");
+        
+        ITEMCODETextField.setText("");
+        ITEMNAMETextField.setText("");
+        SUPPLIERTextField.setText("");
+        MOQSpinner.setValue(0);
+        PRICETextField.setText("0.00");
+        MINIMUMSpinner.setValue(0);
+    }//GEN-LAST:event_CREATENEWITEMButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1425,15 +1490,30 @@ public class maingui extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton CREATENEWITEMButton;
     private javax.swing.JPanel Homesidepanel;
+    private javax.swing.JComboBox<String> ITEMCODEBox;
+    private javax.swing.JTextField ITEMCODETextField;
+    private java.awt.List ITEMLISTField;
+    private javax.swing.JTextField ITEMNAMETextField;
+    private javax.swing.JPasswordField LOGINPASSWORDJPasswordField;
+    private javax.swing.JTextField LOGINUSERIDTextField;
     private javax.swing.JPanel Loginpage;
     private javax.swing.JPanel Loginsidepanel;
     private javax.swing.JToggleButton Logouthomesidepanelbutton;
     private javax.swing.JToggleButton Logoutinventorysidepanelbutton1;
     private javax.swing.JToggleButton Logoutoptionssidepanelbutton;
     private javax.swing.JToggleButton Logoutordersidepanelbutton;
+    private javax.swing.JSpinner MINIMUMSpinner;
+    private javax.swing.JSpinner MOQSpinner;
+    private javax.swing.JTextField PRICETextField;
     private javax.swing.JPanel Parent;
+    private javax.swing.JTextField RegisterNameTextField;
+    private javax.swing.JPasswordField RegisterPasswordConfirmField;
+    private javax.swing.JPasswordField RegisterPasswordField;
+    private javax.swing.JTextField RegisterUIDTextField;
     private javax.swing.JPanel Registrationsidepanel;
+    private javax.swing.JTextField SUPPLIERTextField;
     private javax.swing.JToggleButton additemaddoptionspage;
     private javax.swing.JToggleButton additemhomepagebutton;
     private javax.swing.JToggleButton additeminventorysidepanelbutton;
@@ -1454,7 +1534,6 @@ public class maingui extends javax.swing.JFrame {
     private javax.swing.JToggleButton inventorystatushomepagebutton;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1490,32 +1569,18 @@ public class maingui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
-    private javax.swing.JPasswordField jPasswordField3;
     private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JSpinner jSpinner2;
-    private javax.swing.JSpinner jSpinner3;
     private javax.swing.JSpinner jSpinner4;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JToggleButton jToggleButton4;
     private javax.swing.JToggleButton jToggleButton5;
     private javax.swing.JToggleButton jToggleButton6;
     private javax.swing.JToggleButton jToggleButton7;
-    private java.awt.List list1;
     private java.awt.List list2;
     private java.awt.List list3;
     private java.awt.List list4;

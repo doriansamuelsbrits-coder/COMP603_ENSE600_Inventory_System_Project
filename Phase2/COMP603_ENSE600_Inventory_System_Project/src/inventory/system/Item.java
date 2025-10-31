@@ -4,12 +4,12 @@ package inventory.system;
 This class focuses on aiding the Hashmap for printing to the txt file.
 */
 public class Item {
-    String itemCode;
-    String itemName;
-    int qty;
-    int moq;
-    int stkMin;
-    double price;
+    public String itemCode;
+    public String itemName;
+    public int qty;
+    public int moq;
+    public int stkMin;
+    public double price;
     
     public Item(String itemCode, String itemName, int qty, int moq, int stkMin, double price) {
         this.itemCode = itemCode;
