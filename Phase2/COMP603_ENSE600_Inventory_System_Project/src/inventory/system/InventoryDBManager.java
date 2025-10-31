@@ -153,6 +153,18 @@ public class InventoryDBManager {
             System.err.println("SQLException: " + ex.getMessage());
         }
     }
+    
+    
+     public boolean deleteItemFromDatabase(String code) throws SQLException {
+        String deleteSQL = "DELETE FROM Inventory WHERE CODE=?";
+        try (Connection conn = getConnection();
+             PreparedStatement deletePS = conn.prepareStatement(deleteSQL)) {
+            
+            deletePS.setString(1, code);
+            int rowsAffected = deletePS.executeUpdate();
+            return rowsAffected > 0;
+        }
+    }
 
     /*
     This Database Method will display and currently updated orderrequest table which

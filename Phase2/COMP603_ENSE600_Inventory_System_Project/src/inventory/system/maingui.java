@@ -1,4 +1,4 @@
-
+package inventory.system;
 import inventory.system.InventoryDBManager;
 import inventory.system.InventorySystem;
 import inventory.system.Item;
@@ -30,13 +30,16 @@ public class maingui extends javax.swing.JFrame {
         registersidepanelbutton = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
         Registrationsidepanel = new javax.swing.JPanel();
         loginsidepanelbutton1 = new javax.swing.JToggleButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
         Homesidepanel = new javax.swing.JPanel();
         Logouthomesidepanelbutton = new javax.swing.JToggleButton();
         jLabel5 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
         optionssidepanel = new javax.swing.JPanel();
         Logoutoptionssidepanelbutton = new javax.swing.JToggleButton();
         additemoptionssidepanelbutton = new javax.swing.JToggleButton();
@@ -44,18 +47,21 @@ public class maingui extends javax.swing.JFrame {
         inventoryoptionssidepanelbutton = new javax.swing.JToggleButton();
         orderrequestoptionssidepanelbutton = new javax.swing.JToggleButton();
         homeoptionssidepanelbutton = new javax.swing.JToggleButton();
+        jLabel36 = new javax.swing.JLabel();
         inventorysidepanel = new javax.swing.JPanel();
         additeminventorysidepanelbutton = new javax.swing.JToggleButton();
         removeiteminventorysidepanelbutton = new javax.swing.JToggleButton();
         orderrequestinventorysidepanelbutton = new javax.swing.JToggleButton();
         Logoutinventorysidepanelbutton1 = new javax.swing.JToggleButton();
         homeinventorysidepanelbutton = new javax.swing.JToggleButton();
+        jLabel38 = new javax.swing.JLabel();
         ordersidepanel = new javax.swing.JPanel();
         homeordersidepanelbutton = new javax.swing.JToggleButton();
         Logoutordersidepanelbutton = new javax.swing.JToggleButton();
         additemordersidepanelbutton = new javax.swing.JToggleButton();
         removeitemordersidepanelbutton = new javax.swing.JToggleButton();
         inventoryordersidepanelbutton = new javax.swing.JToggleButton();
+        jLabel39 = new javax.swing.JLabel();
         Parent = new javax.swing.JPanel();
         Loginpage = new javax.swing.JPanel();
         LOGINUSERIDTextField = new javax.swing.JTextField();
@@ -63,6 +69,7 @@ public class maingui extends javax.swing.JFrame {
         LOGINPASSWORDJPasswordField = new javax.swing.JPasswordField();
         loginloginpagebutton = new javax.swing.JToggleButton();
         jLabel7 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
         registrationpage = new javax.swing.JPanel();
         RegisterNameTextField = new javax.swing.JTextField();
         RegisterUIDTextField = new javax.swing.JTextField();
@@ -73,6 +80,7 @@ public class maingui extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         RegisterPasswordConfirmField = new javax.swing.JPasswordField();
         registerregistrationpagebutton = new javax.swing.JToggleButton();
+        jLabel43 = new javax.swing.JLabel();
         homepage = new javax.swing.JPanel();
         removeitemhomepagebutton = new javax.swing.JToggleButton();
         inventorystatushomepagebutton = new javax.swing.JToggleButton();
@@ -112,35 +120,39 @@ public class maingui extends javax.swing.JFrame {
         removeitemremoveoptionspagebutton = new javax.swing.JToggleButton();
         jLabel29 = new javax.swing.JLabel();
         removeqtypage = new javax.swing.JPanel();
-        jSpinner4 = new javax.swing.JSpinner();
-        list3 = new java.awt.List();
+        removeqtyspinner = new javax.swing.JSpinner();
+        removeqtylist = new java.awt.List();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        jToggleButton4 = new javax.swing.JToggleButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        removeqtybutton = new javax.swing.JToggleButton();
+        removeqtycombo = new javax.swing.JComboBox<>();
         jLabel35 = new javax.swing.JLabel();
         removeitempage = new javax.swing.JPanel();
-        list4 = new java.awt.List();
+        removeitemlist = new java.awt.List();
         jLabel22 = new javax.swing.JLabel();
-        jToggleButton5 = new javax.swing.JToggleButton();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        removeitembutton = new javax.swing.JToggleButton();
+        removeitemcombo = new javax.swing.JComboBox<>();
         jLabel32 = new javax.swing.JLabel();
         inventorypage = new javax.swing.JPanel();
-        list5 = new java.awt.List();
-        jToggleButton6 = new javax.swing.JToggleButton();
-        panel1 = new java.awt.Panel();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
+        inventorylist = new java.awt.List();
+        inventorydocbutton = new javax.swing.JToggleButton();
+        totalitemstext = new javax.swing.JTextField();
+        totalqtytext = new javax.swing.JTextField();
+        belowminimumtext = new javax.swing.JTextField();
+        outofstocktext = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         orderpage = new javax.swing.JPanel();
+<<<<<<< HEAD
+        orderlist = new java.awt.List();
+        orderbutton = new javax.swing.JToggleButton();
+=======
         ORDERREQUESTList = new java.awt.List();
         jToggleButton7 = new javax.swing.JToggleButton();
+>>>>>>> b250dd633727916a365b3fe1e1f89e24dd96dfad
         jLabel31 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -150,6 +162,7 @@ public class maingui extends javax.swing.JFrame {
         sidepanel.setLayout(new java.awt.CardLayout());
 
         Loginsidepanel.setBackground(new java.awt.Color(102, 255, 255));
+        Loginsidepanel.setLayout(null);
 
         registersidepanelbutton.setText("Register");
         registersidepanelbutton.addActionListener(new java.awt.event.ActionListener() {
@@ -157,43 +170,28 @@ public class maingui extends javax.swing.JFrame {
                 registersidepanelbuttonActionPerformed(evt);
             }
         });
+        Loginsidepanel.add(registersidepanelbutton);
+        registersidepanelbutton.setBounds(23, 187, 112, 23);
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("NEW USER?");
+        Loginsidepanel.add(jLabel1);
+        jLabel1.setBounds(40, 130, 80, 16);
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("CLICK REGISTER TO SIGN UP");
+        Loginsidepanel.add(jLabel2);
+        jLabel2.setBounds(6, 153, 151, 16);
 
-        javax.swing.GroupLayout LoginsidepanelLayout = new javax.swing.GroupLayout(Loginsidepanel);
-        Loginsidepanel.setLayout(LoginsidepanelLayout);
-        LoginsidepanelLayout.setHorizontalGroup(
-            LoginsidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LoginsidepanelLayout.createSequentialGroup()
-                .addGroup(LoginsidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(LoginsidepanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel2))
-                    .addGroup(LoginsidepanelLayout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jLabel1))
-                    .addGroup(LoginsidepanelLayout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(registersidepanelbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        LoginsidepanelLayout.setVerticalGroup(
-            LoginsidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginsidepanelLayout.createSequentialGroup()
-                .addContainerGap(131, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(registersidepanelbutton)
-                .addGap(190, 190, 190))
-        );
+        jLabel41.setIcon(new javax.swing.ImageIcon("C:\\Users\\kanth\\Downloads\\Timber.jpg")); // NOI18N
+        Loginsidepanel.add(jLabel41);
+        jLabel41.setBounds(0, 0, 160, 400);
 
         sidepanel.add(Loginsidepanel, "card2");
 
         Registrationsidepanel.setBackground(new java.awt.Color(102, 255, 255));
+        Registrationsidepanel.setLayout(null);
 
         loginsidepanelbutton1.setBackground(new java.awt.Color(102, 255, 102));
         loginsidepanelbutton1.setText("Login");
@@ -202,47 +200,29 @@ public class maingui extends javax.swing.JFrame {
                 loginsidepanelbutton1ActionPerformed(evt);
             }
         });
+        Registrationsidepanel.add(loginsidepanelbutton1);
+        loginsidepanelbutton1.setBounds(24, 188, 112, 23);
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("ALREADY REGISTERED");
+        Registrationsidepanel.add(jLabel3);
+        jLabel3.setBounds(20, 130, 130, 16);
 
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Click on login");
+        Registrationsidepanel.add(jLabel4);
+        jLabel4.setBounds(44, 154, 73, 16);
 
-        javax.swing.GroupLayout RegistrationsidepanelLayout = new javax.swing.GroupLayout(Registrationsidepanel);
-        Registrationsidepanel.setLayout(RegistrationsidepanelLayout);
-        RegistrationsidepanelLayout.setHorizontalGroup(
-            RegistrationsidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistrationsidepanelLayout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18))
-            .addGroup(RegistrationsidepanelLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jLabel4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(RegistrationsidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(RegistrationsidepanelLayout.createSequentialGroup()
-                    .addGap(24, 24, 24)
-                    .addComponent(loginsidepanelbutton1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(24, Short.MAX_VALUE)))
-        );
-        RegistrationsidepanelLayout.setVerticalGroup(
-            RegistrationsidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(RegistrationsidepanelLayout.createSequentialGroup()
-                .addGap(132, 132, 132)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addContainerGap(230, Short.MAX_VALUE))
-            .addGroup(RegistrationsidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(RegistrationsidepanelLayout.createSequentialGroup()
-                    .addGap(188, 188, 188)
-                    .addComponent(loginsidepanelbutton1)
-                    .addContainerGap(189, Short.MAX_VALUE)))
-        );
+        jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/inventory/system/Timber.jpg"))); // NOI18N
+        Registrationsidepanel.add(jLabel40);
+        jLabel40.setBounds(0, 0, 160, 400);
 
         sidepanel.add(Registrationsidepanel, "card3");
 
         Homesidepanel.setBackground(new java.awt.Color(255, 255, 255));
+        Homesidepanel.setLayout(null);
 
         Logouthomesidepanelbutton.setBackground(new java.awt.Color(255, 51, 51));
         Logouthomesidepanelbutton.setForeground(new java.awt.Color(255, 255, 255));
@@ -252,34 +232,22 @@ public class maingui extends javax.swing.JFrame {
                 LogouthomesidepanelbuttonActionPerformed(evt);
             }
         });
+        Homesidepanel.add(Logouthomesidepanelbutton);
+        Logouthomesidepanelbutton.setBounds(16, 362, 112, 23);
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("WELCOME BACK!!");
+        Homesidepanel.add(jLabel5);
+        jLabel5.setBounds(24, 68, 120, 20);
 
-        javax.swing.GroupLayout HomesidepanelLayout = new javax.swing.GroupLayout(Homesidepanel);
-        Homesidepanel.setLayout(HomesidepanelLayout);
-        HomesidepanelLayout.setHorizontalGroup(
-            HomesidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(HomesidepanelLayout.createSequentialGroup()
-                .addGroup(HomesidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(HomesidepanelLayout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(Logouthomesidepanelbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(HomesidepanelLayout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jLabel5)))
-                .addContainerGap(32, Short.MAX_VALUE))
-        );
-        HomesidepanelLayout.setVerticalGroup(
-            HomesidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HomesidepanelLayout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 278, Short.MAX_VALUE)
-                .addComponent(Logouthomesidepanelbutton)
-                .addGap(15, 15, 15))
-        );
+        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/inventory/system/Rainbow Blue.jpg"))); // NOI18N
+        Homesidepanel.add(jLabel37);
+        jLabel37.setBounds(0, 0, 160, 400);
 
         sidepanel.add(Homesidepanel, "card4");
+
+        optionssidepanel.setLayout(null);
 
         Logoutoptionssidepanelbutton.setBackground(new java.awt.Color(255, 51, 51));
         Logoutoptionssidepanelbutton.setForeground(new java.awt.Color(255, 255, 255));
@@ -289,6 +257,8 @@ public class maingui extends javax.swing.JFrame {
                 LogoutoptionssidepanelbuttonActionPerformed(evt);
             }
         });
+        optionssidepanel.add(Logoutoptionssidepanelbutton);
+        Logoutoptionssidepanelbutton.setBounds(24, 354, 112, 23);
 
         additemoptionssidepanelbutton.setText("ADD ITEM");
         additemoptionssidepanelbutton.addActionListener(new java.awt.event.ActionListener() {
@@ -296,6 +266,8 @@ public class maingui extends javax.swing.JFrame {
                 additemoptionssidepanelbuttonActionPerformed(evt);
             }
         });
+        optionssidepanel.add(additemoptionssidepanelbutton);
+        additemoptionssidepanelbutton.setBounds(6, 104, 148, 23);
 
         removeitemoptionssidepanelbutton.setText("REMOVE ITEM");
         removeitemoptionssidepanelbutton.addActionListener(new java.awt.event.ActionListener() {
@@ -303,6 +275,8 @@ public class maingui extends javax.swing.JFrame {
                 removeitemoptionssidepanelbuttonActionPerformed(evt);
             }
         });
+        optionssidepanel.add(removeitemoptionssidepanelbutton);
+        removeitemoptionssidepanelbutton.setBounds(6, 145, 148, 23);
 
         inventoryoptionssidepanelbutton.setText("INVENTORY STATUS");
         inventoryoptionssidepanelbutton.addActionListener(new java.awt.event.ActionListener() {
@@ -310,6 +284,8 @@ public class maingui extends javax.swing.JFrame {
                 inventoryoptionssidepanelbuttonActionPerformed(evt);
             }
         });
+        optionssidepanel.add(inventoryoptionssidepanelbutton);
+        inventoryoptionssidepanelbutton.setBounds(6, 186, 148, 23);
 
         orderrequestoptionssidepanelbutton.setText("ORDER REQUEST");
         orderrequestoptionssidepanelbutton.addActionListener(new java.awt.event.ActionListener() {
@@ -317,6 +293,8 @@ public class maingui extends javax.swing.JFrame {
                 orderrequestoptionssidepanelbuttonActionPerformed(evt);
             }
         });
+        optionssidepanel.add(orderrequestoptionssidepanelbutton);
+        orderrequestoptionssidepanelbutton.setBounds(6, 227, 148, 23);
 
         homeoptionssidepanelbutton.setText("HOME");
         homeoptionssidepanelbutton.addActionListener(new java.awt.event.ActionListener() {
@@ -324,50 +302,19 @@ public class maingui extends javax.swing.JFrame {
                 homeoptionssidepanelbuttonActionPerformed(evt);
             }
         });
+        optionssidepanel.add(homeoptionssidepanelbutton);
+        homeoptionssidepanelbutton.setBounds(14, 15, 65, 23);
 
-        javax.swing.GroupLayout optionssidepanelLayout = new javax.swing.GroupLayout(optionssidepanel);
-        optionssidepanel.setLayout(optionssidepanelLayout);
-        optionssidepanelLayout.setHorizontalGroup(
-            optionssidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(optionssidepanelLayout.createSequentialGroup()
-                .addGroup(optionssidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, optionssidepanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(optionssidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(inventoryoptionssidepanelbutton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
-                            .addComponent(orderrequestoptionssidepanelbutton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(removeitemoptionssidepanelbutton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(additemoptionssidepanelbutton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(optionssidepanelLayout.createSequentialGroup()
-                        .addGroup(optionssidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(optionssidepanelLayout.createSequentialGroup()
-                                .addGap(24, 24, 24)
-                                .addComponent(Logoutoptionssidepanelbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(optionssidepanelLayout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addComponent(homeoptionssidepanelbutton)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        optionssidepanelLayout.setVerticalGroup(
-            optionssidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, optionssidepanelLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(homeoptionssidepanelbutton)
-                .addGap(66, 66, 66)
-                .addComponent(additemoptionssidepanelbutton)
-                .addGap(18, 18, 18)
-                .addComponent(removeitemoptionssidepanelbutton)
-                .addGap(18, 18, 18)
-                .addComponent(inventoryoptionssidepanelbutton)
-                .addGap(18, 18, 18)
-                .addComponent(orderrequestoptionssidepanelbutton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
-                .addComponent(Logoutoptionssidepanelbutton)
-                .addGap(23, 23, 23))
-        );
+        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/inventory/system/Rainbow Blue.jpg"))); // NOI18N
+        jLabel36.setMaximumSize(new java.awt.Dimension(1920, 240));
+        jLabel36.setMinimumSize(new java.awt.Dimension(1920, 240));
+        jLabel36.setPreferredSize(new java.awt.Dimension(240, 240));
+        optionssidepanel.add(jLabel36);
+        jLabel36.setBounds(0, 0, 160, 400);
 
         sidepanel.add(optionssidepanel, "card5");
+
+        inventorysidepanel.setLayout(null);
 
         additeminventorysidepanelbutton.setText("ADD ITEM");
         additeminventorysidepanelbutton.addActionListener(new java.awt.event.ActionListener() {
@@ -375,6 +322,8 @@ public class maingui extends javax.swing.JFrame {
                 additeminventorysidepanelbuttonActionPerformed(evt);
             }
         });
+        inventorysidepanel.add(additeminventorysidepanelbutton);
+        additeminventorysidepanelbutton.setBounds(6, 129, 148, 23);
 
         removeiteminventorysidepanelbutton.setText("REMOVE ITEM");
         removeiteminventorysidepanelbutton.addActionListener(new java.awt.event.ActionListener() {
@@ -382,6 +331,8 @@ public class maingui extends javax.swing.JFrame {
                 removeiteminventorysidepanelbuttonActionPerformed(evt);
             }
         });
+        inventorysidepanel.add(removeiteminventorysidepanelbutton);
+        removeiteminventorysidepanelbutton.setBounds(6, 170, 148, 23);
 
         orderrequestinventorysidepanelbutton.setText("ORDER REQUEST");
         orderrequestinventorysidepanelbutton.addActionListener(new java.awt.event.ActionListener() {
@@ -389,6 +340,8 @@ public class maingui extends javax.swing.JFrame {
                 orderrequestinventorysidepanelbuttonActionPerformed(evt);
             }
         });
+        inventorysidepanel.add(orderrequestinventorysidepanelbutton);
+        orderrequestinventorysidepanelbutton.setBounds(6, 211, 148, 23);
 
         Logoutinventorysidepanelbutton1.setBackground(new java.awt.Color(255, 51, 51));
         Logoutinventorysidepanelbutton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -398,6 +351,8 @@ public class maingui extends javax.swing.JFrame {
                 Logoutinventorysidepanelbutton1ActionPerformed(evt);
             }
         });
+        inventorysidepanel.add(Logoutinventorysidepanelbutton1);
+        Logoutinventorysidepanelbutton1.setBounds(24, 356, 112, 23);
 
         homeinventorysidepanelbutton.setText("HOME");
         homeinventorysidepanelbutton.addActionListener(new java.awt.event.ActionListener() {
@@ -405,46 +360,17 @@ public class maingui extends javax.swing.JFrame {
                 homeinventorysidepanelbuttonActionPerformed(evt);
             }
         });
+        inventorysidepanel.add(homeinventorysidepanelbutton);
+        homeinventorysidepanelbutton.setBounds(14, 18, 65, 23);
 
-        javax.swing.GroupLayout inventorysidepanelLayout = new javax.swing.GroupLayout(inventorysidepanel);
-        inventorysidepanel.setLayout(inventorysidepanelLayout);
-        inventorysidepanelLayout.setHorizontalGroup(
-            inventorysidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(inventorysidepanelLayout.createSequentialGroup()
-                .addGroup(inventorysidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(inventorysidepanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(inventorysidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(additeminventorysidepanelbutton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
-                            .addComponent(removeiteminventorysidepanelbutton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(orderrequestinventorysidepanelbutton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(inventorysidepanelLayout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(Logoutinventorysidepanelbutton1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(inventorysidepanelLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(homeinventorysidepanelbutton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        inventorysidepanelLayout.setVerticalGroup(
-            inventorysidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(inventorysidepanelLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(homeinventorysidepanelbutton)
-                .addGap(88, 88, 88)
-                .addComponent(additeminventorysidepanelbutton)
-                .addGap(18, 18, 18)
-                .addComponent(removeiteminventorysidepanelbutton)
-                .addGap(18, 18, 18)
-                .addComponent(orderrequestinventorysidepanelbutton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
-                .addComponent(Logoutinventorysidepanelbutton1)
-                .addGap(21, 21, 21))
-        );
+        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/inventory/system/Rainbow Blue.jpg"))); // NOI18N
+        jLabel38.setText("jLabel38");
+        inventorysidepanel.add(jLabel38);
+        jLabel38.setBounds(0, 0, 160, 400);
 
         sidepanel.add(inventorysidepanel, "card6");
+
+        ordersidepanel.setLayout(null);
 
         homeordersidepanelbutton.setText("HOME");
         homeordersidepanelbutton.addActionListener(new java.awt.event.ActionListener() {
@@ -452,6 +378,8 @@ public class maingui extends javax.swing.JFrame {
                 homeordersidepanelbuttonActionPerformed(evt);
             }
         });
+        ordersidepanel.add(homeordersidepanelbutton);
+        homeordersidepanelbutton.setBounds(16, 19, 65, 23);
 
         Logoutordersidepanelbutton.setBackground(new java.awt.Color(255, 51, 51));
         Logoutordersidepanelbutton.setForeground(new java.awt.Color(255, 255, 255));
@@ -461,6 +389,8 @@ public class maingui extends javax.swing.JFrame {
                 LogoutordersidepanelbuttonActionPerformed(evt);
             }
         });
+        ordersidepanel.add(Logoutordersidepanelbutton);
+        Logoutordersidepanelbutton.setBounds(24, 346, 112, 23);
 
         additemordersidepanelbutton.setText("ADD ITEM");
         additemordersidepanelbutton.addActionListener(new java.awt.event.ActionListener() {
@@ -468,6 +398,8 @@ public class maingui extends javax.swing.JFrame {
                 additemordersidepanelbuttonActionPerformed(evt);
             }
         });
+        ordersidepanel.add(additemordersidepanelbutton);
+        additemordersidepanelbutton.setBounds(6, 113, 148, 23);
 
         removeitemordersidepanelbutton.setText("REMOVE ITEM");
         removeitemordersidepanelbutton.addActionListener(new java.awt.event.ActionListener() {
@@ -475,6 +407,8 @@ public class maingui extends javax.swing.JFrame {
                 removeitemordersidepanelbuttonActionPerformed(evt);
             }
         });
+        ordersidepanel.add(removeitemordersidepanelbutton);
+        removeitemordersidepanelbutton.setBounds(6, 154, 148, 23);
 
         inventoryordersidepanelbutton.setText("INVENTORY STATUS");
         inventoryordersidepanelbutton.addActionListener(new java.awt.event.ActionListener() {
@@ -482,45 +416,12 @@ public class maingui extends javax.swing.JFrame {
                 inventoryordersidepanelbuttonActionPerformed(evt);
             }
         });
+        ordersidepanel.add(inventoryordersidepanelbutton);
+        inventoryordersidepanelbutton.setBounds(6, 195, 148, 23);
 
-        javax.swing.GroupLayout ordersidepanelLayout = new javax.swing.GroupLayout(ordersidepanel);
-        ordersidepanel.setLayout(ordersidepanelLayout);
-        ordersidepanelLayout.setHorizontalGroup(
-            ordersidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ordersidepanelLayout.createSequentialGroup()
-                .addGroup(ordersidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ordersidepanelLayout.createSequentialGroup()
-                        .addGroup(ordersidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(ordersidepanelLayout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(homeordersidepanelbutton))
-                            .addGroup(ordersidepanelLayout.createSequentialGroup()
-                                .addGap(24, 24, 24)
-                                .addComponent(Logoutordersidepanelbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ordersidepanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(ordersidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(inventoryordersidepanelbutton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
-                            .addComponent(removeitemordersidepanelbutton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(additemordersidepanelbutton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap())
-        );
-        ordersidepanelLayout.setVerticalGroup(
-            ordersidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ordersidepanelLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(homeordersidepanelbutton)
-                .addGap(71, 71, 71)
-                .addComponent(additemordersidepanelbutton)
-                .addGap(18, 18, 18)
-                .addComponent(removeitemordersidepanelbutton)
-                .addGap(18, 18, 18)
-                .addComponent(inventoryordersidepanelbutton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
-                .addComponent(Logoutordersidepanelbutton)
-                .addGap(31, 31, 31))
-        );
+        jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/inventory/system/Rainbow Blue.jpg"))); // NOI18N
+        ordersidepanel.add(jLabel39);
+        jLabel39.setBounds(0, 0, 160, 400);
 
         sidepanel.add(ordersidepanel, "card7");
 
@@ -529,11 +430,18 @@ public class maingui extends javax.swing.JFrame {
 
         Parent.setLayout(new java.awt.CardLayout());
 
-        LOGINUSERIDTextField.setText("jTextField1");
+        Loginpage.setLayout(null);
+        Loginpage.add(LOGINUSERIDTextField);
+        LOGINUSERIDTextField.setBounds(124, 122, 181, 22);
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("USER ID");
-
-        LOGINPASSWORDJPasswordField.setText("jPasswordField1");
+        Loginpage.add(jLabel6);
+        jLabel6.setBounds(172, 100, 70, 20);
+        Loginpage.add(LOGINPASSWORDJPasswordField);
+        LOGINPASSWORDJPasswordField.setBounds(124, 191, 181, 22);
 
         loginloginpagebutton.setBackground(new java.awt.Color(102, 255, 102));
         loginloginpagebutton.setText("Login");
@@ -542,64 +450,59 @@ public class maingui extends javax.swing.JFrame {
                 loginloginpagebuttonActionPerformed(evt);
             }
         });
+        Loginpage.add(loginloginpagebutton);
+        loginloginpagebutton.setBounds(159, 231, 112, 23);
 
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("PASSWORD");
+        Loginpage.add(jLabel7);
+        jLabel7.setBounds(170, 160, 90, 20);
 
-        javax.swing.GroupLayout LoginpageLayout = new javax.swing.GroupLayout(Loginpage);
-        Loginpage.setLayout(LoginpageLayout);
-        LoginpageLayout.setHorizontalGroup(
-            LoginpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LoginpageLayout.createSequentialGroup()
-                .addGroup(LoginpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(LoginpageLayout.createSequentialGroup()
-                        .addGap(195, 195, 195)
-                        .addComponent(jLabel6))
-                    .addGroup(LoginpageLayout.createSequentialGroup()
-                        .addGap(124, 124, 124)
-                        .addGroup(LoginpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(LOGINUSERIDTextField)
-                            .addComponent(LOGINPASSWORDJPasswordField, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)))
-                    .addGroup(LoginpageLayout.createSequentialGroup()
-                        .addGap(159, 159, 159)
-                        .addComponent(loginloginpagebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(LoginpageLayout.createSequentialGroup()
-                        .addGap(182, 182, 182)
-                        .addComponent(jLabel7)))
-                .addContainerGap(175, Short.MAX_VALUE))
-        );
-        LoginpageLayout.setVerticalGroup(
-            LoginpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LoginpageLayout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(LOGINUSERIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(LOGINPASSWORDJPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(loginloginpagebutton)
-                .addContainerGap(146, Short.MAX_VALUE))
-        );
+        jLabel42.setIcon(new javax.swing.ImageIcon("C:\\Users\\kanth\\Downloads\\Celestial.jpg")); // NOI18N
+        Loginpage.add(jLabel42);
+        jLabel42.setBounds(0, 0, 480, 400);
 
         Parent.add(Loginpage, "card2");
 
-        RegisterNameTextField.setText("jTextField2");
+        registrationpage.setLayout(null);
+        registrationpage.add(RegisterNameTextField);
+        RegisterNameTextField.setBounds(140, 87, 194, 22);
+        registrationpage.add(RegisterUIDTextField);
+        RegisterUIDTextField.setBounds(140, 149, 194, 22);
 
-        RegisterUIDTextField.setText("jTextField3");
-
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("NAME");
+        registrationpage.add(jLabel8);
+        jLabel8.setBounds(200, 60, 80, 20);
 
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("USER ID");
+        registrationpage.add(jLabel9);
+        jLabel9.setBounds(210, 120, 52, 20);
 
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("PASSWORD");
+        registrationpage.add(jLabel10);
+        jLabel10.setBounds(200, 180, 79, 20);
+        registrationpage.add(RegisterPasswordField);
+        RegisterPasswordField.setBounds(140, 211, 194, 22);
 
-        RegisterPasswordField.setText("jPasswordField2");
-
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("RE-TYPE PASSWORD");
-
-        RegisterPasswordConfirmField.setText("jPasswordField3");
+        registrationpage.add(jLabel11);
+        jLabel11.setBounds(170, 240, 138, 20);
+        registrationpage.add(RegisterPasswordConfirmField);
+        RegisterPasswordConfirmField.setBounds(140, 273, 194, 22);
 
         registerregistrationpagebutton.setText("Register");
         registerregistrationpagebutton.addActionListener(new java.awt.event.ActionListener() {
@@ -607,63 +510,12 @@ public class maingui extends javax.swing.JFrame {
                 registerregistrationpagebuttonActionPerformed(evt);
             }
         });
+        registrationpage.add(registerregistrationpagebutton);
+        registerregistrationpagebutton.setBounds(190, 321, 112, 23);
 
-        javax.swing.GroupLayout registrationpageLayout = new javax.swing.GroupLayout(registrationpage);
-        registrationpage.setLayout(registrationpageLayout);
-        registrationpageLayout.setHorizontalGroup(
-            registrationpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(registrationpageLayout.createSequentialGroup()
-                .addGap(220, 220, 220)
-                .addComponent(jLabel9)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(registrationpageLayout.createSequentialGroup()
-                .addGap(222, 222, 222)
-                .addComponent(jLabel8)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(registrationpageLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(registrationpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(RegisterNameTextField)
-                    .addComponent(RegisterUIDTextField)
-                    .addComponent(RegisterPasswordField, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
-                    .addComponent(RegisterPasswordConfirmField))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registrationpageLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(registerregistrationpagebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(178, 178, 178))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registrationpageLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel10)
-                .addGap(205, 205, 205))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registrationpageLayout.createSequentialGroup()
-                .addContainerGap(187, Short.MAX_VALUE)
-                .addComponent(jLabel11)
-                .addGap(183, 183, 183))
-        );
-        registrationpageLayout.setVerticalGroup(
-            registrationpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(registrationpageLayout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(RegisterNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(RegisterUIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(RegisterPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(RegisterPasswordConfirmField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(registerregistrationpagebutton)
-                .addContainerGap(56, Short.MAX_VALUE))
-        );
+        jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/inventory/system/Celestial.jpg"))); // NOI18N
+        registrationpage.add(jLabel43);
+        jLabel43.setBounds(0, 0, 480, 400);
 
         Parent.add(registrationpage, "card3");
 
@@ -704,6 +556,8 @@ public class maingui extends javax.swing.JFrame {
         });
         homepage.add(orderrequesthomepagebutton);
         orderrequesthomepagebutton.setBounds(258, 209, 177, 125);
+
+        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/inventory/system/Sublime Vivid.jpg"))); // NOI18N
         homepage.add(jLabel27);
         jLabel27.setBounds(0, 0, 480, 400);
 
@@ -728,6 +582,8 @@ public class maingui extends javax.swing.JFrame {
         });
         addoptionspage.add(additemaddoptionspage);
         additemaddoptionspage.setBounds(248, 141, 170, 110);
+
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/inventory/system/Sublime Vivid.jpg"))); // NOI18N
         addoptionspage.add(jLabel28);
         jLabel28.setBounds(0, 0, 480, 400);
 
@@ -743,7 +599,7 @@ public class maingui extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("ITEM CODE");
         addqtypage.add(jLabel12);
-        jLabel12.setBounds(40, 310, 65, 16);
+        jLabel12.setBounds(40, 310, 62, 16);
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
@@ -763,6 +619,8 @@ public class maingui extends javax.swing.JFrame {
         ITEMCODEBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         addqtypage.add(ITEMCODEBox);
         ITEMCODEBox.setBounds(120, 310, 88, 22);
+
+        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/inventory/system/Sublime Vivid.jpg"))); // NOI18N
         addqtypage.add(jLabel33);
         jLabel33.setBounds(0, 0, 480, 400);
 
@@ -792,11 +650,11 @@ public class maingui extends javax.swing.JFrame {
             }
         });
         additempage.add(CREATENEWITEMButton);
-        CREATENEWITEMButton.setBounds(86, 341, 71, 23);
+        CREATENEWITEMButton.setBounds(86, 341, 80, 23);
 
         jToggleButton3.setText("REFRESH");
         additempage.add(jToggleButton3);
-        jToggleButton3.setBounds(302, 341, 78, 23);
+        jToggleButton3.setBounds(302, 341, 90, 23);
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
@@ -808,31 +666,33 @@ public class maingui extends javax.swing.JFrame {
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("ITEM NAME");
         additempage.add(jLabel15);
-        jLabel15.setBounds(67, 93, 69, 16);
+        jLabel15.setBounds(67, 93, 65, 16);
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("SUPPLIER");
         additempage.add(jLabel16);
-        jLabel16.setBounds(67, 133, 55, 16);
+        jLabel16.setBounds(67, 133, 54, 16);
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("MINIMUM ORDER QUANTITY");
         additempage.add(jLabel17);
-        jLabel17.setBounds(67, 173, 169, 16);
+        jLabel17.setBounds(67, 173, 165, 16);
 
         jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("PRICE");
         additempage.add(jLabel18);
-        jLabel18.setBounds(67, 213, 33, 16);
+        jLabel18.setBounds(67, 213, 32, 16);
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("MINIMUM QUANTITY");
         additempage.add(jLabel19);
-        jLabel19.setBounds(67, 253, 125, 16);
+        jLabel19.setBounds(67, 253, 122, 16);
+
+        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/inventory/system/Sublime Vivid.jpg"))); // NOI18N
         additempage.add(jLabel34);
         jLabel34.setBounds(0, 0, 480, 400);
 
@@ -857,22 +717,24 @@ public class maingui extends javax.swing.JFrame {
         });
         removeoptionspage.add(removeitemremoveoptionspagebutton);
         removeitemremoveoptionspagebutton.setBounds(255, 141, 170, 110);
+
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/inventory/system/Sublime Vivid.jpg"))); // NOI18N
         removeoptionspage.add(jLabel29);
         jLabel29.setBounds(0, 0, 480, 400);
 
         Parent.add(removeoptionspage, "card8");
 
         removeqtypage.setLayout(null);
-        removeqtypage.add(jSpinner4);
-        jSpinner4.setBounds(376, 305, 64, 22);
-        removeqtypage.add(list3);
-        list3.setBounds(40, 38, 400, 239);
+        removeqtypage.add(removeqtyspinner);
+        removeqtyspinner.setBounds(376, 305, 64, 22);
+        removeqtypage.add(removeqtylist);
+        removeqtylist.setBounds(40, 38, 400, 239);
 
         jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("ITEM CODE");
         removeqtypage.add(jLabel20);
-        jLabel20.setBounds(40, 308, 65, 16);
+        jLabel20.setBounds(40, 308, 62, 16);
 
         jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
@@ -880,21 +742,28 @@ public class maingui extends javax.swing.JFrame {
         removeqtypage.add(jLabel21);
         jLabel21.setBounds(284, 308, 70, 16);
 
-        jToggleButton4.setText("REMOVE QUANTITY");
-        removeqtypage.add(jToggleButton4);
-        jToggleButton4.setBounds(170, 345, 136, 23);
+        removeqtybutton.setText("REMOVE QUANTITY");
+        removeqtybutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeqtybuttonActionPerformed(evt);
+            }
+        });
+        removeqtypage.add(removeqtybutton);
+        removeqtybutton.setBounds(170, 345, 170, 23);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        removeqtypage.add(jComboBox1);
-        jComboBox1.setBounds(119, 305, 95, 22);
+        removeqtycombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        removeqtypage.add(removeqtycombo);
+        removeqtycombo.setBounds(119, 305, 95, 22);
+
+        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/inventory/system/Sublime Vivid.jpg"))); // NOI18N
         removeqtypage.add(jLabel35);
         jLabel35.setBounds(0, 0, 480, 400);
 
         Parent.add(removeqtypage, "card9");
 
         removeitempage.setLayout(null);
-        removeitempage.add(list4);
-        list4.setBounds(40, 38, 400, 239);
+        removeitempage.add(removeitemlist);
+        removeitemlist.setBounds(40, 38, 400, 239);
 
         jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
@@ -902,55 +771,45 @@ public class maingui extends javax.swing.JFrame {
         removeitempage.add(jLabel22);
         jLabel22.setBounds(111, 303, 70, 16);
 
-        jToggleButton5.setText("REMOVE ITEM");
-        removeitempage.add(jToggleButton5);
-        jToggleButton5.setBounds(152, 340, 106, 23);
+        removeitembutton.setText("REMOVE ITEM");
+        removeitembutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeitembuttonActionPerformed(evt);
+            }
+        });
+        removeitempage.add(removeitembutton);
+        removeitembutton.setBounds(170, 340, 140, 23);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        removeitempage.add(jComboBox2);
-        jComboBox2.setBounds(218, 300, 120, 22);
+        removeitemcombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        removeitempage.add(removeitemcombo);
+        removeitemcombo.setBounds(218, 300, 120, 22);
+
+        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/inventory/system/Sublime Vivid.jpg"))); // NOI18N
         removeitempage.add(jLabel32);
         jLabel32.setBounds(0, 0, 480, 400);
 
         Parent.add(removeitempage, "card10");
 
         inventorypage.setLayout(null);
-        inventorypage.add(list5);
-        list5.setBounds(55, 142, 395, 183);
+        inventorypage.add(inventorylist);
+        inventorylist.setBounds(55, 142, 395, 183);
 
-        jToggleButton6.setText("GENERATE INVENTORY STATUS DOCUMENT");
-        inventorypage.add(jToggleButton6);
-        jToggleButton6.setBounds(118, 346, 265, 23);
-
-        javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
-        panel1.setLayout(panel1Layout);
-        panel1Layout.setHorizontalGroup(
-            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 112, Short.MAX_VALUE)
-        );
-        panel1Layout.setVerticalGroup(
-            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 112, Short.MAX_VALUE)
-        );
-
-        inventorypage.add(panel1);
-        panel1.setBounds(344, 20, 112, 112);
-
-        jTextField11.setText("jTextField11");
-        inventorypage.add(jTextField11);
-        jTextField11.setBounds(244, 20, 77, 22);
-
-        jTextField12.setText("jTextField12");
-        inventorypage.add(jTextField12);
-        jTextField12.setBounds(244, 48, 77, 22);
-
-        jTextField13.setText("jTextField13");
-        inventorypage.add(jTextField13);
-        jTextField13.setBounds(244, 76, 77, 22);
-
-        jTextField14.setText("jTextField14");
-        inventorypage.add(jTextField14);
-        jTextField14.setBounds(244, 104, 77, 22);
+        inventorydocbutton.setText("GENERATE INVENTORY STATUS DOCUMENT");
+        inventorydocbutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inventorydocbuttonActionPerformed(evt);
+            }
+        });
+        inventorypage.add(inventorydocbutton);
+        inventorydocbutton.setBounds(60, 350, 340, 23);
+        inventorypage.add(totalitemstext);
+        totalitemstext.setBounds(350, 20, 64, 22);
+        inventorypage.add(totalqtytext);
+        totalqtytext.setBounds(350, 50, 64, 22);
+        inventorypage.add(belowminimumtext);
+        belowminimumtext.setBounds(350, 80, 64, 22);
+        inventorypage.add(outofstocktext);
+        outofstocktext.setBounds(350, 110, 64, 22);
 
         jLabel23.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
@@ -962,31 +821,45 @@ public class maingui extends javax.swing.JFrame {
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
         jLabel24.setText("TOTAL QUANTITY");
         inventorypage.add(jLabel24);
-        jLabel24.setBounds(31, 51, 104, 16);
+        jLabel24.setBounds(31, 51, 100, 16);
 
         jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setText("BELOW MINIMUM STOCK");
         inventorypage.add(jLabel25);
-        jLabel25.setBounds(31, 79, 147, 16);
+        jLabel25.setBounds(31, 79, 144, 16);
 
         jLabel26.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
         jLabel26.setText("OUT OF STOCK");
         inventorypage.add(jLabel26);
-        jLabel26.setBounds(31, 107, 86, 16);
+        jLabel26.setBounds(31, 107, 84, 16);
+
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/inventory/system/Sublime Vivid.jpg"))); // NOI18N
         inventorypage.add(jLabel30);
         jLabel30.setBounds(0, 0, 480, 400);
 
         Parent.add(inventorypage, "card11");
 
         orderpage.setLayout(null);
+<<<<<<< HEAD
+        orderpage.add(orderlist);
+        orderlist.setBounds(45, 36, 386, 245);
+=======
         orderpage.add(ORDERREQUESTList);
         ORDERREQUESTList.setBounds(45, 36, 386, 245);
+>>>>>>> b250dd633727916a365b3fe1e1f89e24dd96dfad
 
-        jToggleButton7.setText("GENERATE ORDER REQUEST DOCUMENT");
-        orderpage.add(jToggleButton7);
-        jToggleButton7.setBounds(129, 321, 249, 23);
+        orderbutton.setText("GENERATE ORDER REQUEST DOCUMENT");
+        orderbutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                orderbuttonActionPerformed(evt);
+            }
+        });
+        orderpage.add(orderbutton);
+        orderbutton.setBounds(70, 320, 330, 23);
+
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/inventory/system/Sublime Vivid.jpg"))); // NOI18N
         orderpage.add(jLabel31);
         jLabel31.setBounds(0, 0, 480, 400);
 
@@ -1078,6 +951,47 @@ public class maingui extends javax.swing.JFrame {
 
     private void inventoryoptionssidepanelbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventoryoptionssidepanelbuttonActionPerformed
         // TODO add your handling code here:
+         InventoryDBManager i = new InventoryDBManager();
+        inventoryMap = i.LoadInventoryTable();
+      
+        inventorylist.removeAll();//whenever there is a new run of the text field it will empty.
+        inventorylist.add(String.format("%-10s | %-12s | %-5s | %-5s | %-8s | %-8s%n","Item Code", "Item Name", "Qty", "MOQ", "Stk Min", "Price"));
+        inventorylist.add("-----------------------------------------------------------------------------");
+        
+         int totalItems = 0;
+        int totalQuantity = 0;
+        int belowMinimumStock = 0;
+        int outOfStock = 0;
+        
+        for(Map.Entry<String, Item> entry: inventoryMap.entrySet())
+        {
+            String key = entry.getKey();
+            Item item = entry.getValue();
+            
+            String line = String.format("%-10s | %-12s | %-5d | %-5d | %-8d | %-8.2f%n", item.itemCode, item.itemName, item.qty, item.moq, item.stkMin, item.price);
+            inventorylist.add(line);
+            
+            totalItems++;
+            totalQuantity += item.qty;
+            
+            // Calculate items below minimum stock
+            if (item.qty > 0 && item.qty < item.stkMin) {
+                belowMinimumStock++;
+            }
+            
+            // Calculate items out of stock
+            if (item.qty == 0) {
+                outOfStock++;
+            }
+          
+        }
+        
+         totalitemstext.setText(String.valueOf(totalItems));
+        totalqtytext.setText(String.valueOf(totalQuantity));
+        belowminimumtext.setText(String.valueOf(belowMinimumStock)); // New update
+        outofstocktext.setText(String.valueOf(outOfStock));
+        
+        
         sidepanel.removeAll();
         sidepanel.add(inventorysidepanel);
         sidepanel.repaint();
@@ -1091,6 +1005,8 @@ public class maingui extends javax.swing.JFrame {
 
     private void orderrequestoptionssidepanelbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderrequestoptionssidepanelbuttonActionPerformed
         // TODO add your handling code here:
+        displayOrderRequestList();
+        
         sidepanel.removeAll();
         sidepanel.add(ordersidepanel);
         sidepanel.repaint();
@@ -1156,6 +1072,8 @@ public class maingui extends javax.swing.JFrame {
 
     private void orderrequestinventorysidepanelbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderrequestinventorysidepanelbuttonActionPerformed
         // TODO add your handling code here:
+        displayOrderRequestList();
+        
         sidepanel.removeAll();
         sidepanel.add(ordersidepanel);
         sidepanel.repaint();
@@ -1221,6 +1139,47 @@ public class maingui extends javax.swing.JFrame {
 
     private void inventoryordersidepanelbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventoryordersidepanelbuttonActionPerformed
         // TODO add your handling code here:
+         InventoryDBManager i = new InventoryDBManager();
+        inventoryMap = i.LoadInventoryTable();
+      
+        inventorylist.removeAll();//whenever there is a new run of the text field it will empty.
+        inventorylist.add(String.format("%-10s | %-12s | %-5s | %-5s | %-8s | %-8s%n","Item Code", "Item Name", "Qty", "MOQ", "Stk Min", "Price"));
+        inventorylist.add("-----------------------------------------------------------------------------");
+        
+         int totalItems = 0;
+        int totalQuantity = 0;
+        int belowMinimumStock = 0;
+        int outOfStock = 0;
+        
+        for(Map.Entry<String, Item> entry: inventoryMap.entrySet())
+        {
+            String key = entry.getKey();
+            Item item = entry.getValue();
+            
+            String line = String.format("%-10s | %-12s | %-5d | %-5d | %-8d | %-8.2f%n", item.itemCode, item.itemName, item.qty, item.moq, item.stkMin, item.price);
+            inventorylist.add(line);
+            
+            totalItems++;
+            totalQuantity += item.qty;
+            
+            // Calculate items below minimum stock
+            if (item.qty > 0 && item.qty < item.stkMin) {
+                belowMinimumStock++;
+            }
+            
+            // Calculate items out of stock
+            if (item.qty == 0) {
+                outOfStock++;
+            }
+          
+        }
+        
+         totalitemstext.setText(String.valueOf(totalItems));
+        totalqtytext.setText(String.valueOf(totalQuantity));
+        belowminimumtext.setText(String.valueOf(belowMinimumStock)); // New update
+        outofstocktext.setText(String.valueOf(outOfStock));
+        
+        
         sidepanel.removeAll();
         sidepanel.add(inventorysidepanel);
         sidepanel.repaint();
@@ -1348,6 +1307,46 @@ public class maingui extends javax.swing.JFrame {
 
     private void inventorystatushomepagebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventorystatushomepagebuttonActionPerformed
         // TODO add your handling code here:
+       InventoryDBManager i = new InventoryDBManager();
+        inventoryMap = i.LoadInventoryTable();
+      
+        inventorylist.removeAll();//whenever there is a new run of the text field it will empty.
+        inventorylist.add(String.format("%-10s | %-12s | %-5s | %-5s | %-8s | %-8s%n","Item Code", "Item Name", "Qty", "MOQ", "Stk Min", "Price"));
+        inventorylist.add("-----------------------------------------------------------------------------");
+        
+         int totalItems = 0;
+        int totalQuantity = 0;
+        int belowMinimumStock = 0;
+        int outOfStock = 0;
+        
+        for(Map.Entry<String, Item> entry: inventoryMap.entrySet())
+        {
+            String key = entry.getKey();
+            Item item = entry.getValue();
+            
+            String line = String.format("%-10s | %-12s | %-5d | %-5d | %-8d | %-8.2f%n", item.itemCode, item.itemName, item.qty, item.moq, item.stkMin, item.price);
+            inventorylist.add(line);
+            
+            totalItems++;
+            totalQuantity += item.qty;
+            
+            // Calculate items below minimum stock
+            if (item.qty > 0 && item.qty < item.stkMin) {
+                belowMinimumStock++;
+            }
+            
+            // Calculate items out of stock
+            if (item.qty == 0) {
+                outOfStock++;
+            }
+          
+        }
+        
+         totalitemstext.setText(String.valueOf(totalItems));
+        totalqtytext.setText(String.valueOf(totalQuantity));
+        belowminimumtext.setText(String.valueOf(belowMinimumStock)); // New update
+        outofstocktext.setText(String.valueOf(outOfStock));
+        
         sidepanel.removeAll();
         sidepanel.add(inventorysidepanel);
         sidepanel.repaint();
@@ -1359,10 +1358,52 @@ public class maingui extends javax.swing.JFrame {
         Parent.revalidate();
     }//GEN-LAST:event_inventorystatushomepagebuttonActionPerformed
 
+    private void displayOrderRequestList() {
+        InventoryDBManager i = new InventoryDBManager();
+        inventoryMap = i.LoadInventoryTable();
+        
+        orderlist.removeAll();
+        orderlist.add(String.format("%-10s | %-12s | %9s | %7s | %11s%n","Item Code", "Item Name", "Order Qty", "Price", "Total Price"));
+        orderlist.add("-----------------------------------------------------------------------------");
+
+        boolean anyOrders = false;
+        
+        for (Item item : inventoryMap.values()) {
+            // Only include items where quantity is below the stock minimum
+            if (item.qty < item.stkMin) {
+                // Calculate the deficit (how many needed to reach minimum)
+                int deficit = item.stkMin - item.qty;
+                
+                // Calculate Order Quantity, ensuring it's a multiple of MOQ
+                // Formula: ceil(deficit / moq) * moq
+                int orderQty = ((deficit + item.moq - 1) / item.moq) * item.moq;
+                
+                // Calculate total price for the order
+                double totalPrice = orderQty * item.price;
+
+                // Format the line similar to Printer.java, but use List.add()
+                String line = String.format("%-10s | %-12s | %9d | %7.2f | %11.2f%n",
+                        item.itemCode, item.itemName, orderQty, item.price, totalPrice);
+                
+                orderlist.add(line.trim()); // trim to remove trailing newline from %n
+
+                anyOrders = true;
+            }
+        }
+        
+        if (!anyOrders) {
+            orderlist.add("No items currently require an order request.");
+        }
+    }
+
+    
     private void orderrequesthomepagebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderrequesthomepagebuttonActionPerformed
     
         //ORDERREQUESTList.add()...
         // TODO add your handling code here:
+        
+        displayOrderRequestList();
+        
         sidepanel.removeAll();
         sidepanel.add(ordersidepanel);
         sidepanel.repaint();
@@ -1421,6 +1462,26 @@ public class maingui extends javax.swing.JFrame {
 
     private void removeqtyremoveoptionspagebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeqtyremoveoptionspagebuttonActionPerformed
         // TODO add your handling code here:
+        InventoryDBManager i = new InventoryDBManager();
+        inventoryMap = i.LoadInventoryTable();
+        
+        removeqtycombo.removeAllItems();//clears selection box
+        removeqtylist.removeAll();//whenever there is a new run of the text field it will empty.
+        removeqtylist.add(String.format("%-10s | %-12s | %-5s | %-5s | %-8s | %-8s%n","Item Code", "Item Name", "Qty", "MOQ", "Stk Min", "Price"));
+        removeqtylist.add("-----------------------------------------------------------------------------");
+        for(Map.Entry<String, Item> entry: inventoryMap.entrySet())
+        {
+            String key = entry.getKey();
+            Item item = entry.getValue();
+            
+            String line = String.format("%-10s | %-12s | %-5d | %-5d | %-8d | %-8.2f%n", item.itemCode, item.itemName, item.qty, item.moq, item.stkMin, item.price);
+            removeqtylist.add(line);
+            
+            removeqtycombo.addItem(item.itemCode);
+        }
+        
+        
+        
         sidepanel.removeAll();
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
@@ -1434,6 +1495,26 @@ public class maingui extends javax.swing.JFrame {
 
     private void removeitemremoveoptionspagebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeitemremoveoptionspagebuttonActionPerformed
         // TODO add your handling code here:
+        
+        InventoryDBManager i = new InventoryDBManager();
+        inventoryMap = i.LoadInventoryTable();
+        
+        removeitemcombo.removeAllItems();//clears selection box
+        removeitemlist.removeAll();//whenever there is a new run of the text field it will empty.
+        removeitemlist.add(String.format("%-10s | %-12s | %-5s | %-5s | %-8s | %-8s%n","Item Code", "Item Name", "Qty", "MOQ", "Stk Min", "Price"));
+        removeitemlist.add("-----------------------------------------------------------------------------");
+        for(Map.Entry<String, Item> entry: inventoryMap.entrySet())
+        {
+            String key = entry.getKey();
+            Item item = entry.getValue();
+            
+            String line = String.format("%-10s | %-12s | %-5d | %-5d | %-8d | %-8.2f%n", item.itemCode, item.itemName, item.qty, item.moq, item.stkMin, item.price);
+            removeitemlist.add(line);
+            
+            removeitemcombo.addItem(item.itemCode);
+        }
+        
+        
         sidepanel.removeAll();
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
@@ -1468,14 +1549,154 @@ public class maingui extends javax.swing.JFrame {
         MOQSpinner.setValue(0);
         PRICETextField.setText("0.00");
         MINIMUMSpinner.setValue(0);
+        
+        sidepanel.removeAll();
+        sidepanel.add(Homesidepanel);
+        sidepanel.repaint();
+        sidepanel.revalidate();
+
+        Parent.removeAll();
+        Parent.add(homepage);
+        Parent.repaint();
+        Parent.revalidate();
+        
     }//GEN-LAST:event_CREATENEWITEMButtonActionPerformed
 
     private void ITEMADDQTYButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ITEMADDQTYButtonActionPerformed
         // TODO add your handling code here:
         Integer qty = (Integer)ITEMQTYSpinner.getValue();
-        String code = ITEMCODEBox.getItemAt(0);
+        String code = (String)ITEMCODEBox.getSelectedItem();
+        
+        boolean success = updatelist.updateItemQuantity(inventoryMap, code, qty, true);
+
+        if (success) {
+            JOptionPane.showMessageDialog(this, "Successfully added " + qty + " to item " + code);
+            // Reload and refresh the list after a successful update (not shown here, but recommended)
+        } else {
+            JOptionPane.showMessageDialog(this, "Failed to add quantity.", "Update Error", JOptionPane.ERROR_MESSAGE);
+        }
+        
+        sidepanel.removeAll();
+        sidepanel.add(Homesidepanel);
+        sidepanel.repaint();
+        sidepanel.revalidate();
+
+        Parent.removeAll();
+        Parent.add(homepage);
+        Parent.repaint();
+        Parent.revalidate();
         
     }//GEN-LAST:event_ITEMADDQTYButtonActionPerformed
+
+    private void removeqtybuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeqtybuttonActionPerformed
+        // TODO add your handling code here:
+        Integer qty =(Integer)removeqtyspinner.getValue();
+        String code = (String)removeqtycombo.getSelectedItem();
+        
+        boolean success = updatelist.updateItemQuantity(inventoryMap, code, qty, false);
+
+        if (success) {
+            JOptionPane.showMessageDialog(this, "Successfully removed " + qty + " from item " + code);
+            // Reload and refresh the list after a successful update (not shown here, but recommended)
+        } else {
+            JOptionPane.showMessageDialog(this, "Failed to remove quantity.", "Update Error", JOptionPane.ERROR_MESSAGE);
+        }
+        
+        sidepanel.removeAll();
+        sidepanel.add(Homesidepanel);
+        sidepanel.repaint();
+        sidepanel.revalidate();
+
+        Parent.removeAll();
+        Parent.add(homepage);
+        Parent.repaint();
+        Parent.revalidate();
+        
+    }//GEN-LAST:event_removeqtybuttonActionPerformed
+
+    private void removeitembuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeitembuttonActionPerformed
+        // TODO add your handling code here:
+       String code = (String)removeitemcombo.getSelectedItem();
+        
+        if (code == null || code.isEmpty() || code.equals("Item 1")) { // Check for default placeholder if necessary
+            JOptionPane.showMessageDialog(this, "Please select a valid item to remove.", "Selection Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        // Call the new method to remove the item
+        boolean success = updatelist.removeItemFromInventory(inventoryMap, code);
+        
+        if (success) {
+            JOptionPane.showMessageDialog(this, "Item " + code + " has been successfully removed.");
+            
+            // IMPORTANT: You need to manually update your UI here:
+            // 1. Re-populate removeitemcombo to remove the deleted item.
+            // 2. Re-populate removeitemlist to update the display.
+            
+        } else {
+            // Error handling is delegated to the updatelist method's console output.
+            JOptionPane.showMessageDialog(this, "Failed to remove item " + code + ". See console for database details.", "Removal Error", JOptionPane.ERROR_MESSAGE);
+        }
+        
+        sidepanel.removeAll();
+        sidepanel.add(Homesidepanel);
+        sidepanel.repaint();
+        sidepanel.revalidate();
+
+        Parent.removeAll();
+        Parent.add(homepage);
+        Parent.repaint();
+        Parent.revalidate();
+        
+    }//GEN-LAST:event_removeitembuttonActionPerformed
+
+    private void inventorydocbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventorydocbuttonActionPerformed
+        // TODO add your handling code here:
+        InventoryDBManager i = new InventoryDBManager();
+        inventoryMap = i.LoadInventoryTable();
+        
+        // 2. Call the new method in Printer to generate the document
+        // Assumes InventorySystem.getInventoryFile() provides the file path
+        Printer.generateInventoryStatusDocument(inventoryMap, InventorySystem.getInventoryFile());
+        
+        JOptionPane.showMessageDialog(this, "Inventory status document generated successfully.", "Document Created", JOptionPane.INFORMATION_MESSAGE);
+        
+        sidepanel.removeAll();
+        sidepanel.add(Homesidepanel);
+        sidepanel.repaint();
+        sidepanel.revalidate();
+
+        Parent.removeAll();
+        Parent.add(homepage);
+        Parent.repaint();
+        Parent.revalidate();
+        
+    }//GEN-LAST:event_inventorydocbuttonActionPerformed
+
+    private void orderbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderbuttonActionPerformed
+        // TODO add your handling code here:
+        InventoryDBManager i = new InventoryDBManager();
+        inventoryMap = i.LoadInventoryTable();
+        
+        i.InsertIntoOrderRequestTable(inventoryMap);
+        
+        // 2. Call the new method in Printer to generate the order request document
+        // Assumes InventorySystem.getOrderRequestFile() provides the file path
+        Printer.generateOrderRequestDocument(inventoryMap, InventorySystem.getOrderRequestFile());
+        
+        JOptionPane.showMessageDialog(this, "Order Request document generated successfully.", "Document Created", JOptionPane.INFORMATION_MESSAGE);
+     
+        sidepanel.removeAll();
+        sidepanel.add(Homesidepanel);
+        sidepanel.repaint();
+        sidepanel.revalidate();
+
+        Parent.removeAll();
+        Parent.add(homepage);
+        Parent.repaint();
+        Parent.revalidate();
+        
+    }//GEN-LAST:event_orderbuttonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1549,17 +1770,18 @@ public class maingui extends javax.swing.JFrame {
     private javax.swing.JPanel addoptionspage;
     private javax.swing.JToggleButton addqtyaddoptionspage;
     private javax.swing.JPanel addqtypage;
+    private javax.swing.JTextField belowminimumtext;
     private javax.swing.JToggleButton homeinventorysidepanelbutton;
     private javax.swing.JToggleButton homeoptionssidepanelbutton;
     private javax.swing.JToggleButton homeordersidepanelbutton;
     private javax.swing.JPanel homepage;
+    private javax.swing.JToggleButton inventorydocbutton;
+    private java.awt.List inventorylist;
     private javax.swing.JToggleButton inventoryoptionssidepanelbutton;
     private javax.swing.JToggleButton inventoryordersidepanelbutton;
     private javax.swing.JPanel inventorypage;
     private javax.swing.JPanel inventorysidepanel;
     private javax.swing.JToggleButton inventorystatushomepagebutton;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1589,47 +1811,60 @@ public class maingui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JSpinner jSpinner4;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
     private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
-    private javax.swing.JToggleButton jToggleButton5;
-    private javax.swing.JToggleButton jToggleButton6;
-    private javax.swing.JToggleButton jToggleButton7;
     private java.awt.List list2;
+<<<<<<< HEAD
+=======
     private java.awt.List list3;
     private java.awt.List list4;
     private java.awt.List list5;
+>>>>>>> b250dd633727916a365b3fe1e1f89e24dd96dfad
     private javax.swing.JToggleButton loginloginpagebutton;
     private javax.swing.JToggleButton loginsidepanelbutton1;
     private javax.swing.JPanel optionssidepanel;
+    private javax.swing.JToggleButton orderbutton;
+    private java.awt.List orderlist;
     private javax.swing.JPanel orderpage;
     private javax.swing.JToggleButton orderrequesthomepagebutton;
     private javax.swing.JToggleButton orderrequestinventorysidepanelbutton;
     private javax.swing.JToggleButton orderrequestoptionssidepanelbutton;
     private javax.swing.JPanel ordersidepanel;
-    private java.awt.Panel panel1;
+    private javax.swing.JTextField outofstocktext;
     private javax.swing.JToggleButton registerregistrationpagebutton;
     private javax.swing.JToggleButton registersidepanelbutton;
     private javax.swing.JPanel registrationpage;
+    private javax.swing.JToggleButton removeitembutton;
+    private javax.swing.JComboBox<String> removeitemcombo;
     private javax.swing.JToggleButton removeitemhomepagebutton;
     private javax.swing.JToggleButton removeiteminventorysidepanelbutton;
+    private java.awt.List removeitemlist;
     private javax.swing.JToggleButton removeitemoptionssidepanelbutton;
     private javax.swing.JToggleButton removeitemordersidepanelbutton;
     private javax.swing.JPanel removeitempage;
     private javax.swing.JToggleButton removeitemremoveoptionspagebutton;
     private javax.swing.JPanel removeoptionspage;
+    private javax.swing.JToggleButton removeqtybutton;
+    private javax.swing.JComboBox<String> removeqtycombo;
+    private java.awt.List removeqtylist;
     private javax.swing.JPanel removeqtypage;
     private javax.swing.JToggleButton removeqtyremoveoptionspagebutton;
+    private javax.swing.JSpinner removeqtyspinner;
     private javax.swing.JPanel sidepanel;
+    private javax.swing.JTextField totalitemstext;
+    private javax.swing.JTextField totalqtytext;
     // End of variables declaration//GEN-END:variables
 }
