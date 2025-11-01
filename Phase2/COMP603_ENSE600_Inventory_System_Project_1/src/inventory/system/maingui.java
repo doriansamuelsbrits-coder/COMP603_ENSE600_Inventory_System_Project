@@ -117,7 +117,6 @@ public class maingui extends javax.swing.JFrame {
         PRICETextField = new javax.swing.JTextField();
         MINIMUMSpinner = new javax.swing.JSpinner();
         CREATENEWITEMButton = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -184,10 +183,13 @@ public class maingui extends javax.swing.JFrame {
         Loginsidepanel.add(jLabel1);
         jLabel1.setBounds(40, 130, 80, 16);
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("CLICK REGISTER TO SIGN UP");
         Loginsidepanel.add(jLabel2);
-        jLabel2.setBounds(6, 153, 151, 16);
+        jLabel2.setBounds(10, 150, 140, 16);
+
+        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/inventory/system/Timber.jpg"))); // NOI18N
         Loginsidepanel.add(jLabel41);
         jLabel41.setBounds(0, 0, 160, 400);
 
@@ -204,15 +206,17 @@ public class maingui extends javax.swing.JFrame {
             }
         });
         Registrationsidepanel.add(loginsidepanelbutton1);
-        loginsidepanelbutton1.setBounds(24, 188, 112, 23);
+        loginsidepanelbutton1.setBounds(10, 190, 112, 23);
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("ALREADY REGISTERED");
         Registrationsidepanel.add(jLabel3);
-        jLabel3.setBounds(25, 132, 119, 16);
+        jLabel3.setBounds(10, 130, 130, 15);
 
         jLabel4.setText("Click on login");
         Registrationsidepanel.add(jLabel4);
-        jLabel4.setBounds(44, 154, 71, 16);
+        jLabel4.setBounds(30, 150, 73, 16);
 
         jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/inventory/system/Timber.jpg"))); // NOI18N
         Registrationsidepanel.add(jLabel40);
@@ -458,6 +462,8 @@ public class maingui extends javax.swing.JFrame {
         jLabel7.setText("PASSWORD");
         Loginpage.add(jLabel7);
         jLabel7.setBounds(170, 160, 90, 20);
+
+        jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/inventory/system/Celestial.jpg"))); // NOI18N
         Loginpage.add(jLabel42);
         jLabel42.setBounds(0, 0, 480, 400);
 
@@ -481,7 +487,7 @@ public class maingui extends javax.swing.JFrame {
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("USER ID");
         registrationpage.add(jLabel9);
-        jLabel9.setBounds(210, 120, 53, 20);
+        jLabel9.setBounds(210, 120, 70, 20);
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -596,7 +602,7 @@ public class maingui extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("ITEM CODE");
         addqtypage.add(jLabel12);
-        jLabel12.setBounds(40, 310, 65, 16);
+        jLabel12.setBounds(40, 310, 70, 16);
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
@@ -611,7 +617,7 @@ public class maingui extends javax.swing.JFrame {
             }
         });
         addqtypage.add(ITEMADDQTYButton);
-        ITEMADDQTYButton.setBounds(154, 350, 115, 23);
+        ITEMADDQTYButton.setBounds(154, 350, 150, 23);
 
         ITEMCODEBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         addqtypage.add(ITEMCODEBox);
@@ -648,10 +654,6 @@ public class maingui extends javax.swing.JFrame {
         });
         additempage.add(CREATENEWITEMButton);
         CREATENEWITEMButton.setBounds(86, 341, 80, 23);
-
-        jToggleButton3.setText("REFRESH");
-        additempage.add(jToggleButton3);
-        jToggleButton3.setBounds(302, 341, 90, 23);
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
@@ -1236,6 +1238,7 @@ public class maingui extends javax.swing.JFrame {
         try {
             InventoryDBManager i = new InventoryDBManager();
             userMap = i.LoadSecurityTable(); //update hashmap with existing users
+            
             String uid = RegisterUIDTextField.getText();
             if(userMap.containsKey(uid)){throw new Exception("Current Username Already Exists!");}
             
@@ -1470,8 +1473,6 @@ public class maingui extends javax.swing.JFrame {
             removeqtycombo.addItem(item.itemCode);
         }
         
-        
-        
         sidepanel.removeAll();
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
@@ -1503,8 +1504,7 @@ public class maingui extends javax.swing.JFrame {
             
             removeitemcombo.addItem(item.itemCode);
         }
-        
-        
+
         sidepanel.removeAll();
         sidepanel.add(optionssidepanel);
         sidepanel.repaint();
@@ -1814,7 +1814,6 @@ public class maingui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JToggleButton jToggleButton3;
     private java.awt.List list2;
     private javax.swing.JToggleButton loginloginpagebutton;
     private javax.swing.JToggleButton loginsidepanelbutton1;

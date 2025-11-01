@@ -95,8 +95,5 @@ public class Printer {
             System.out.println("Error writing order request document: " + e.getMessage());
         }
     }
-    
-    
-    
 }
 

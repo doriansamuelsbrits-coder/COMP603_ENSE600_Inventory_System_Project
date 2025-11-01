@@ -1,7 +1,8 @@
-Order Request Report - Generated on: Sat Nov 01 19:31:55 NZDT 2025
+Order Request Report - Generated on: Sat Nov 01 22:00:30 NZDT 2025
 
 Item Code  | Item Name  | Order Qty |  Price  | Total Price 
 -----------------------------------------------------------
+AB2001     | S1         |         5 |   50.00 |      250.00
 AB1030     | S16        |         3 |   20.00 |       60.00
+AB3001     | Samsung s23 |         3 |  300.00 |      900.00
 AB1070     | S11        |         3 |   10.00 |       30.00
-AB1050     | S12        |         4 |  200.00 |      800.00

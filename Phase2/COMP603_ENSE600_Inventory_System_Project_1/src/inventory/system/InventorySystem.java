@@ -24,8 +24,4 @@ public class InventorySystem {
     public static Map<String,Security> getSecurityMap(){return security;}
     
     public static String getPrefix(){return ITEM_CODE_PREFIX;}
-    
-    public static void main(String[] args) {
-        
-    }
 }
